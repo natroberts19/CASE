@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous" />
+  <link href="https://bootswatch.com/4/litera/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/student-form.css">
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>CASE</title>
+</head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root"></div>
+  <div class="container">
+    <form>
+      <fieldset>
+        <legend>Add New Student Profile</legend>
+
+        <div class="form-group">
+          <label for="demographics">Student Demographics:</label>
+          <textarea class="form-control" id="demoStudId" rows="1" placeholder="7-digit Student Id"></textarea>
+          <br>
+          <textarea class="form-control" id="demoFirstName" rows="1" placeholder="First Name"></textarea>
+          <br>
+          <textarea class="form-control" id="demoLastName" rows="1" placeholder="Last Name"></textarea>
+          <br>
+          <textarea class="form-control" id="demoPhone" rows="1" placeholder="Phone"></textarea>
+          <br>
+          <textarea class="form-control" id="demoEmail" rows="1" placeholder="Email Address"></textarea>
+          <br>
+        </div>
+
+        <div class="form-group">
+          <label for="schedule">Schedule Information:</label>
+          <select class="form-control" id="schedProgram">
+            <option value="None">Choose a program:</option>
+            <option value="ABE">ABE</option>
+            <option value="GED">GED</option>
+            <option value="ESOL">ESOL</option>
+          </select>
+          <br>
+          <select class="form-control" id="schedTime">
+            <option value="None">Choose a schedule:</option>
+            <option value="AM-1">Morning-1</option>
+            <option value="AM-2">Morning-2</option>
+            <option value="PM-1">Afternoon</option>
+            <option value="PM-2">Evening</option>
+          </select>
+          <br>
+          <select class="form-control" id="schedCampus">
+            <option value="None">Choose a campus:</option>
+            <option value="Main">Main</option>
+            <option value="Poinciana">Poinciana</option>
+            <option value="CHS">Celebration HS</option>
+            <option value="KMS">Kissimmee MS</option>
+          </select>
+          <br>
+          <select class="form-control" id="schedStatus">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+          <br>
+        </div>
+
+        <div class="form-group">
+          <label for="advise">Advisement:</label>
+          <select class="form-control" id="adviseLevel">
+            <option value="None">Choose highest level of education:</option>
+            <option value="less than than HS">Less than HS</option>
+            <option value="HS Grad">HS Graduate</option>
+            <option value="Tech or Voc">Tech or Voc</option>
+            <option value="2-yr">A.S or A.A.</option>
+            <option value="4-yr">B.S or B.A.</option>
+            <option value="Masters">Masters</option>
+          </select>
+          <br>
+          <select class="form-control" id="adviseGoal">
+            <option value="None">Choose student goal:</option>
+            <option value="Improve English">Improve English</option>
+            <option value="GED">GED</option>
+            <option value="Tech or Voc">Tech or Voc</option>
+            <option value="College">College</option>
+            <option value="Employment">Employment</option>
+            <option value="Job Promotion">Job Promotion</option>
+          </select>
+          <br>
+          <select class="form-control" id="adviseAdvisor">
+            <option value="None">Choose an advisor:</option>
+            <option value="Karen">Karen</option>
+            <option value="Diana">Diana</option>
+            <option value="Natalie">Natalie</option>
+          </select>
+          <br>
+          <select class="form-control" id="adviseContact">
+              <option value="None">Choose a contact type:</option>
+              <option value="In Person">In Person</option>
+              <option value="Text">Text</option>
+              <option value="Phone">Phone</option>
+              <option value="Email">Email</option>
+            </select>
+            <br>
+            <textarea class="form-control" id="adviseNote" rows="3" placeholder="Enter notes here."></textarea><br>
+
+          <div class="form-group">
+            <input type="file" class="form-control-file" id="inputFile" aria-describedby="fileHelp">
+            <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a
+              new line.
+            </small>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="newStudent">Submit</button>
+      </fieldset>
+    </form>
+
+    <!-- Form Results Here: -->
+    <div id="form-results">
+        <div class="panel-body">
+            <table class="table table-hover" id='new-student-table'>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Program</th>
+                        <th>Time</th>
+                        <th>Campus</th>
+                        <th>Status</th>
+                        <th>Level</th>
+                        <th>Goal</th>
+                        <th>Advisor</th>
+                        <th>Contact Type</th>
+                        <th>Note</th>
+                        <th>File</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- appended data displays here. -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/student-form.js"></script>
+
+</body>
+
+</html>
