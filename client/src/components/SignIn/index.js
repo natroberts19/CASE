@@ -5,18 +5,20 @@ import {Link} from 'react-router-dom';
 const SignIn = (props)=> {
 
 	return (
-		<div>
-			<h1>SIGN IN</h1>
-			<Link to = "/signup" >Go to sign up</Link>
+		<div className="container" style={{'backgroundColor': 'rgb(2, 184, 117)'}}>
+			<h1><i className="fa fa-user-plus"></i>  Advisor Sign In</h1>
+			<p />
 			<form>
-				<label>Email</label><br/>
+				
 				<input value = {props.username} onChange = {props.handleChange} name='username' type='email' placeholder = 'example@email.com'/>
-				<br />
-				<label>Password</label><br/>
-				<input name='password' type='password' value = {props.password} onChange = {props.handleChange} />
-				<br />
+				<p />
+				
+				<input name='password' type='password' placeholder = 'password' value = {props.password} onChange = {props.handleChange} />
+				<p />
 				<button type = 'submit' name = "/auth/signin" onClick = {props.handleSubmit}>Sign In</button>
 			</form>
+			<p />
+			<Link to = "/signup">Go to sign up</Link>
 		</div>
 	);
 
