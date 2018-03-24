@@ -60,10 +60,10 @@ var StudentSchema = new Schema({
     numContacts: {
         type: Number,
     },
-    goal: {
+    highLevelEd: {
         type: String,
     },
-    highLevelEd: {
+    goal: {
         type: String,
     },
     result: {
