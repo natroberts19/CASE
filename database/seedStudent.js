@@ -1,8 +1,7 @@
+// This file empties the Student collection and inserts the students created below:
 const mongoose = require("mongoose");
 const db = require("../models");
 mongoose.Promise = global.Promise;
-
-// This file empties the Students collection and inserts the students created below:
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/case-development",
@@ -212,6 +211,7 @@ const studentSeed = [
   }
 ];
 
+// Drop the existing records from the collection and add the new ones.
 db.Student
   .remove({})
   .then(() => db.Student.collection.insertMany(studentSeed))

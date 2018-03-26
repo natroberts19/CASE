@@ -16,7 +16,15 @@ const Home = (props) =>{
             	<div className="col">
                		<div className="row panel-row">
                     	<div className="col">
-						<Card />
+						<Card 
+							icon="fa fa-gear" 
+							cardHeader="Tools"
+							cardTitle="Tools"
+							cardContent="Tools description here."
+							cardLink1="https://www.remind.com/"
+							cardLink1Name="Remind.com"
+							cardLink2="https://calendly.com/"
+							cardLink2Name="Calendly.com" />
 						</div>
 					</div>
 				</div>
@@ -24,7 +32,16 @@ const Home = (props) =>{
 				<div className="col">
                		<div className="row panel-row">
                     	<div className="col">
-						<Card />
+						<Card 
+							icon="fa fa-industry" 
+							cardHeader="Reports"
+							cardTitle="MSGO Status"
+							cardContent="MSGO description here."
+							cardLink1="#"
+							cardLink1Name="Link1 Name"
+							cardLink2="#"
+							cardLink2Name="Link2 Name" />
+						
 						</div>
 					</div>
 				</div>
@@ -32,7 +49,15 @@ const Home = (props) =>{
 				<div className="col">
                		<div className="row panel-row">
                     	<div className="col">
-						<Card />
+						<Card 
+							icon="fa fa-user-plus" 
+							cardHeader="Advisor"
+							cardTitle="Summary"
+							cardContent="Advisor Summary description here."
+							cardLink1="#"
+							cardLink1Name="Link1 Name"
+							cardLink2="#"
+							cardLink2Name="Link2 Name"/>
 						</div>
 					</div>
 				</div>

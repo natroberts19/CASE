@@ -9,6 +9,7 @@ import Home from "./components/Home";
 
 class App extends Component {
   state = {
+    name: "",
     username: "",
     password: "",
     auth: {
@@ -44,10 +45,12 @@ class App extends Component {
 
     //call a sign In function
     const newUser = {
+      name: this.state.name,
       username: this.state.username,
       password: this.state.password
     };
     this.setState({
+      name: "",
       username: "",
       password: ""
     }); 
@@ -103,6 +106,7 @@ class App extends Component {
             return <SignUp 
               handleChange= {this.handleChange} 
               handleSubmit = {this.handleSubmit}
+              name = {this.state.name}
               email = {this.state.email}
               password = {this.state.password}
             />
