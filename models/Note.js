@@ -8,17 +8,17 @@ const NoteSchema = new Schema({
     advisorName: {
         type: String,
         trim: true,
-        required: "String is Required"
+        // required: "String is Required"
     },
     typeContact: {
         type: String,
         trim: true,
-        required: "String is Required"
+        // required: "String is Required"
     },
     note: {
         type: String,
         trim: true,
-        required: "String is Required"
+        // required: "String is Required"
     },
     date: {
         type: Date,

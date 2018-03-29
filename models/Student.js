@@ -5,12 +5,10 @@ var Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new UserSchema object.
 var StudentSchema = new Schema({
-    _id: {
-        type: Schema.Types.ObjectId,
-    },
     studentId: {
         type: String,
         trim: true,
+        unique: true,
         validate: [
             // Function takes in the new `longstring` value to be saved as an argument
             function (input) {

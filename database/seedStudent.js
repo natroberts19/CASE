@@ -162,7 +162,7 @@ const studentSeed = [
     date: new Date(Date.now())
   },
   {
-    studentId: "1235234",
+    studentId: "1235235",
     firstName: "Penny",
     lastName: "Garcia",
     phone: "407-555-1212",
