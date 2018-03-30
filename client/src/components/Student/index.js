@@ -89,9 +89,6 @@ render() {
             />
 
             <StudentResults
-                resultsHeader="Student"
-                resultsHeader="Schedule"
-                resultsHeader="Advisement"
                 newStudent={this.state.newStudent}
             />
 

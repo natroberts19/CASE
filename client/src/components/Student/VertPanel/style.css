@@ -1,0 +1,20 @@
+#studentResults {
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+thead {
+    background-color: rgb(2, 184, 117);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+tbody {
+    background-color: lightgray;
+    border-radius: 5px;
+}
+
+#tdRowHead {
+    font-weight: bold;
+}

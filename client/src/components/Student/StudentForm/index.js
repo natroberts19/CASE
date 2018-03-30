@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./style.css";
 
 class StudentForm extends Component {
     // Set the initial values of all the form fields (this.state.field).
@@ -30,7 +31,7 @@ class StudentForm extends Component {
 
 render() {
     return(
-        <div className="container" style={{'backgroundColor' : 'whitesmoke'}}>
+        <div className="container" id="studentForm"> 
             <form onSubmit={(event) => this.props.handleFormSubmit(event, this.state)}>
                 <fieldset>
                     <div className="form-group">
@@ -122,7 +123,7 @@ render() {
                             <option value="Natalie">Natalie</option>
                         </select>
                         <br />
-                        <input className="form-control" id="adviseNote" rows="3" placeholder="Enter notes here." name="notes" value={this.state.notes} onChange={this.state.handleInputChange} />
+                        <input className="form-control" id="adviseNote" rows="3" placeholder="Enter notes here." name="notes" value={this.state.notes} onChange={this.handleInputChange} />
                         <br />
                     </div>
 
