@@ -2,8 +2,7 @@ import React from 'react';
 import "./style.css";
 import {Link} from 'react-router-dom';
 
-// gather other componets
-//import otherComponent from "../otherComponent";
+// I think I can do a switch case here.
 
 const Sidenav = (props) => {
 	return(			
