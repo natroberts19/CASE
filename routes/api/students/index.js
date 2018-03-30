@@ -4,9 +4,11 @@ module.exports = function (passport) {
 
     const studentsController = require("../../../controllers/studentsController");
     
+
     // Matches with "/api/students
     router.route("/")
       .get(studentsController.findAll)
+      .post(studentsController.createOne)
     
     // Matches with "/api/students/:id"
     router.route("/:id")

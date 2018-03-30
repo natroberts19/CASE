@@ -4,6 +4,8 @@ import Jumbotron from "../Jumbotron";
 import Navbar from "../Navbar";
 import Sidenav from "../Sidenav";
 import Card from "../Card";
+import Student from "../Student";
+
 
 const Home = (props) =>{
 	return (
@@ -62,7 +64,8 @@ const Home = (props) =>{
 					</div>
 				</div>
 			</div>
-			
+
+			<Student />
 			
 			<Sidenav />
 

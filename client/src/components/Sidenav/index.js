@@ -1,5 +1,6 @@
 import React from 'react';
 import "./style.css";
+import {Link} from 'react-router-dom';
 
 // gather other componets
 //import otherComponent from "../otherComponent";
@@ -7,11 +8,12 @@ import "./style.css";
 const Sidenav = (props) => {
 	return(			
 			<div className="sidenav">
-				<a href="https://www.w3schools.com"><i className="fa fa-map-signs"></i> Dashboard</a>
-				<a href="https://www.w3schools.com"><i className="fa fa-user"></i> Student</a>
-				<a href="https://www.w3schools.com"><i className="fa fa-industry"></i> Reports</a>
-				<a href="https://www.w3schools.com"><i className="fa fa-check-square"></i> Tasks</a>
-				<a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sidenav"><i className="fa fa-user-plus"></i> Advisor</a>
+				<Link to = "/api/home" ><i className="fa fa-map-signs"></i> Dashboard</Link>
+				<Link to = "/api/students" ><i className="fa fa-user"></i> Student</Link>
+				<Link to = "/api/reports" ><i className="fa fa-industry"></i> Reports</Link>
+				<Link to = "/api/tasks" ><i className="fa fa-check-square"></i> Tasks</Link>
+				<Link to = "/api/advisor" ><i className="fa fa-user-plus"></i> Advisor</Link>
+
 			</div>
 	);
 }
