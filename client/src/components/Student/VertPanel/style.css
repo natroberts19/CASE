@@ -11,10 +11,14 @@ thead {
 }
 
 tbody {
-    background-color: lightgray;
+    background-color: whitesmoke;
     border-radius: 5px;
 }
 
 #tdRowHead {
     font-weight: bold;
+}
+
+td {
+    column-width: 200px;
 }

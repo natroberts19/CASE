@@ -8,16 +8,16 @@ var StudentSchema = new Schema({
     studentId: {
         type: String,
         trim: true,
-        // unique: true,
-        // validate: [
-        //     // Function takes in the new `longstring` value to be saved as an argument
-        //     function (input) {
-        //     // If this returns true, proceed. If not, return the error message below
-        //         return input.length = 7;
-        //     },
-        //     // Error Message
-        //     "Student Id must be 7 digits."
-        //     ]
+        unique: true,
+        validate: [
+            // Function takes in the new `longstring` value to be saved as an argument
+            function (input) {
+            // If this returns true, proceed. If not, return the error message below
+                return input.length = 7;
+            },
+            // Error Message
+            "Student Id must be 7 digits."
+            ]
     },
     firstName: {
         type: String,

@@ -1,10 +1,12 @@
 import React from 'react';
 import "./style.css";
-import Jumbotron from "../Jumbotron";
+import Jumbotron from "./Jumbotron";
+import Card from "./Card";
 import Navbar from "../Navbar";
 import Sidenav from "../Sidenav";
-import Card from "../Card";
+// Student and Reports eventually will be its own page and will not import here!
 import Student from "../Student";
+import Reports from "../Reports";
 
 
 const Home = (props) =>{
@@ -64,8 +66,10 @@ const Home = (props) =>{
 					</div>
 				</div>
 			</div>
-
+			<p />
 			<Student />
+			<p />
+			<Reports />
 			
 			<Sidenav />
 

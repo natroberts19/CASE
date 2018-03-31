@@ -3,25 +3,7 @@ import "./style.css";
 import VertPanel from "../VertPanel";
 
 class StudentResults extends Component {
-state = {
-    studentData: {
-        studentId: "",
-        firstName: "",
-        lastName: "",
-        phone: "",
-        email: "",
-        program: "",
-        schedule: "",
-        campus: "",
-        studentStatus: "",
-        highLevelEd: "",
-        goal: "",
-        result: "",
-        advisor: "",
-        notes: "",
-        files: "",
-    }
-};
+
 
 render() {
     return(
@@ -40,14 +22,14 @@ render() {
                 rowHead8="Campus:"
                 rowHead9="Status:"
             resultsHeader3="Advisement"
-                rowHead10="Highest Level of Education:"
+                rowHead10="Education Level:"
                 rowHead11="Goal:"
                 rowHead12="Result:"
                 rowHead13="Advisor:"
                 rowHead14="Notes:"
                 rowHead15="Files:"
     
-                newStudent={ this.state.studentData }
+                newStudent={ this.props.newStudent }
 
         />
     );

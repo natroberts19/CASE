@@ -1,7 +1,6 @@
 import React from 'react';
 
-// gather other componets
-//import otherComponent from "../otherComponent";
+// This will become an announcement section.
 
 const Jumbotron = (props) => {
 	return(

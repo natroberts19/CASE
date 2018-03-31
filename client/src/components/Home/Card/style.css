@@ -1,0 +1,7 @@
+#card {
+    max-width : 20rem;
+}
+
+.card-header {
+    background-color: rgb(2, 184, 117);
+}

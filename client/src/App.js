@@ -6,6 +6,8 @@ import axios from 'axios';
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home";
+// import Student from "./components/Student";
+// import Reports from "./components/Reports"
 
 class App extends Component {
   state = {

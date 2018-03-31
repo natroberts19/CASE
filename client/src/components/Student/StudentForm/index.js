@@ -16,9 +16,9 @@ class StudentForm extends Component {
         highLevelEd: "",
         goal: "",
         result: "",
-        advisor: "",
-        notes: "",
-        files: "",
+        advisor: ""
+        // notes: "",
+        // files: "",
     };
 
     // Handle changes to the input fields:
@@ -28,6 +28,11 @@ class StudentForm extends Component {
             [name]: value
         });
     };
+
+    // handleFormSubmit = event => {
+    //     this.props.handleFormSubmit(event, this.state)
+    // set state back to initial values
+    // }
 
 render() {
     return(
@@ -123,15 +128,15 @@ render() {
                             <option value="Natalie">Natalie</option>
                         </select>
                         <br />
-                        <input className="form-control" id="adviseNote" rows="3" placeholder="Enter notes here." name="notes" value={this.state.notes} onChange={this.handleInputChange} />
+                        {/* <input className="form-control" id="adviseNote" rows="3" placeholder="Enter notes here." name="notes" value={this.state.notes} onChange={this.handleInputChange} /> */}
                         <br />
                     </div>
 
-                    <div className="form-group">
+                    {/* <div className="form-group">
                         <input type="file" className="form-control-file" id="inputFile" aria-describedby="fileHelp" />
                         <small id="fileHelp" className="form-text text-muted">is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.
                         </small>
-                    </div>
+                    </div> */}
 
                     <button type="submit" className="btn btn-primary" id="newStudent">Submit</button>
                 </fieldset>
