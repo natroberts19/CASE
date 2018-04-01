@@ -1,3 +1,8 @@
+// ------------------------------------------------------------------------------------------------------------------
+// Reports is a page that contains the Tabs which contain each student report (MyActive, MyInactive, MyAll, and All.)
+// This page will render when a user clicks the Reports button on the sidenav.
+// ------------------------------------------------------------------------------------------------------------------
+
 import React, { Component } from "react";
 import ReportTabs from "./ReportTabs";
 import MyActiveReport from "./MyActiveReport";
@@ -28,12 +33,15 @@ class Reports extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
+      <h2><i className="fa fa-line-chart"></i> Reports</h2><p />
+
         <ReportTabs
           currentPage={this.state.currentPage}
           handlePageChange={this.handlePageChange}
         />
         {this.renderPage()}
+
       </div>
     );
   }

@@ -1,8 +1,10 @@
+// -------------------------------------------------------------------------------------------------
+// This report contains a table of all students loaded into the CASE database. Sorted by last name.
+// This component imports into the Reports page.
+// -------------------------------------------------------------------------------------------------
+
 import React from 'react';
 import "./style.css";
-
-// gather other componets
-//import otherComponent from "../otherComponent";
 
 const AllReport = (props) => {
 	return(

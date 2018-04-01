@@ -40,7 +40,7 @@ render() {
             <form onSubmit={(event) => this.props.handleFormSubmit(event, this.state)}>
                 <fieldset>
                     <div className="form-group">
-                        <legend>Add New Student</legend>
+                        <legend><i class="fa fa-plus"></i> Add New</legend>
                         <hr />
                         <h6>Student</h6>
                         <label HTMLfor="demographics">7-digit Id:</label>

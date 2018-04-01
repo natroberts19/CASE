@@ -1,8 +1,10 @@
+// --------------------------------------------------------------------------------------------------------------------------
+// This report contains a table of students with a status of Inactive assigned to the logged in advisor. Sorted by last name.
+// This component imports into the Reports page.
+// --------------------------------------------------------------------------------------------------------------------------
+
 import React from 'react';
 import "./style.css";
-
-// gather other componets
-//import otherComponent from "../otherComponent";
 
 const MyInactiveReport = (props) => {
 	return(

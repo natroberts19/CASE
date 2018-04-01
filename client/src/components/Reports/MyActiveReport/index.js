@@ -1,8 +1,11 @@
+// ------------------------------------------------------------------------------------------------------------------------
+// This report contains a table of students with a status of Active assigned to the logged in advisor. Sorted by last name.
+// This report is the default tab that appears when the user clicks the Reports page.
+// This component imports into the Reports page.
+// ------------------------------------------------------------------------------------------------------------------------
+
 import React from 'react';
 import "./style.css";
-
-// gather other componets
-//import otherComponent from "../otherComponent";
 
 const MyActiveReport = (props) => {
 	return(
@@ -28,7 +31,14 @@ const MyActiveReport = (props) => {
 						<td>jsmith@gmail.com</td>
 						<td>Active</td>
 						<td>Natalie</td></tr>
-						{/* <!-- Results from DB Query here --> */}
+					<tr><td>3456987</td>
+						<td>Torres</td>
+						<td>Mary</td>
+						<td>407-555-3434</td>
+						<td>mtorres@gmail.com</td>
+						<td>Active</td>
+						<td>Natalie</td></tr>
+						{/* <!-- Results from DB Query here. Showing two hard code examples for now. --> */}
 
 					</tbody>
 				</table>

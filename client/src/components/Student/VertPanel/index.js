@@ -7,7 +7,7 @@ import TableAdvise from "../VertPanel/TableAdvise"
 const VertPanel = (props) => {
 	return(
 		<div className="container" id="studentResults">
-            <legend>{props.legend}</legend>
+            <legend><i class="fa fa-edit"></i> {props.legend}</legend>
                 <div className="panel-body">
 
                     <TableStudent {...props} />

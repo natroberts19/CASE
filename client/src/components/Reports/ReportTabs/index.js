@@ -1,3 +1,9 @@
+// --------------------------------------------------------------------------------------------------------------
+// ReportTabs is a component that contains the Tabs for each student report (MyActive, MyInactive, MyAll, and All.
+// Has conditional rendering to display the report based on the tab that is clicked.
+// This component imports into the Reports page.
+// --------------------------------------------------------------------------------------------------------------
+
 import React from 'react';
 import "./style.css";
 

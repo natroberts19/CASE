@@ -1,4 +1,11 @@
+// ---------------------------------------------------------------------------------------------------------
+// Student is a page that contains the StudentForm and StudentResults for entering a new student into the db.
+// This page also includes the Navbar and Footer.
+// ---------------------------------------------------------------------------------------------------------
+
 import React, { Component } from 'react';
+import Navbar from "../Navbar";
+import Footer from '../Footer';
 import StudentForm from "./StudentForm";
 import StudentResults from "./StudentResults"
 import axios from 'axios';
@@ -8,7 +15,6 @@ class Student extends Component {
     state = {
         newStudent: {}
     };
-
 
     // Handle the form submit. Post student values.
     handleFormSubmit = (event, formValues) => {
@@ -30,17 +36,19 @@ class Student extends Component {
 
 render() {
     return(
-	
         <div className="container">
-            <StudentForm
-                handleFormSubmit={this.handleFormSubmit}
-                handleInputChange={this.handleInputChange}
+            <Navbar 
+                // {...props}
             />
-
-            <StudentResults
-                newStudent={this.state.newStudent}
-            />
-
+                <h2><i className="fa fa-user"></i> Student</h2><p />
+                    <StudentForm
+                        handleFormSubmit={this.handleFormSubmit}
+                        handleInputChange={this.handleInputChange}
+                    /><p />
+                    <StudentResults
+                        newStudent={this.state.newStudent}
+                    />
+            <Footer />
         </div>
 	);
 }
