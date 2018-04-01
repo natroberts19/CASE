@@ -2,6 +2,7 @@ import React from 'react';
 // import Background from "../Background";
 import {Link} from 'react-router-dom';
 import "./style.css";
+import Footer from "../Footer"
 
 const SignIn = (props)=> {
 

@@ -1,0 +1,13 @@
+footer {
+    text-align: center;
+    background-color: rgb(2, 184, 117);
+    font-family: Lato;
+    font-size: 12px;
+    color: white;
+    /* font-weight: bold; */
+    height: 50px;
+    width:  100%;
+    border-top: 5px solid;
+    border-top-color: #4582EC;
+    padding-top: 15px;
+}

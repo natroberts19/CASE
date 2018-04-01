@@ -6,6 +6,7 @@ import axios from 'axios';
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home";
+// import Wrapper from ".components/Wrapper";
 // import Student from "./components/Student";
 // import Reports from "./components/Reports"
 
@@ -36,7 +37,6 @@ class App extends Component {
 
   handleChange = (event) => {
     const {name, value} = event.target;    
-        // Set the state for the appropriate input field
     this.setState({
       [name]: value
     });
@@ -122,6 +122,7 @@ class App extends Component {
           } 
         }
         }/>
+        
         </div>
       </Router>
     );

@@ -4,6 +4,7 @@ import Jumbotron from "./Jumbotron";
 import Card from "./Card";
 import Navbar from "../Navbar";
 import Sidenav from "../Sidenav";
+import Footer from '../Footer';
 // Student and Reports eventually will be its own page and will not import here!
 import Student from "../Student";
 import Reports from "../Reports";
@@ -11,7 +12,6 @@ import Reports from "../Reports";
 
 const Home = (props) =>{
 	return (
-		
 		<div className="container" style={{"marginLeft":"200px"}}>
 			<Navbar username={props.auth.username} handleLogout={props.handleLogout}/>
 			<Jumbotron />
@@ -72,8 +72,9 @@ const Home = (props) =>{
 			<Reports />
 			
 			<Sidenav />
-
+			<Footer />
 		</div>
+		
 		
 	);
 }

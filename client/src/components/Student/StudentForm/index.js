@@ -31,7 +31,7 @@ class StudentForm extends Component {
 
     // handleFormSubmit = event => {
     //     this.props.handleFormSubmit(event, this.state)
-    // set state back to initial values
+    // set state back to initial values here...
     // }
 
 render() {
@@ -41,58 +41,59 @@ render() {
                 <fieldset>
                     <div className="form-group">
                         <legend>Add New Student</legend>
-                        <label for="demographics">Student:</label>
-                        <input className="form-control" id="demoStudId" rows="1" placeholder="7-digit Student Id" name="studentId" value={this.state.studentId} onChange={this.handleInputChange} />
-                        <br />
-                        <input className="form-control" id="demoFirstName" rows="1" placeholder="First Name" name="firstName" value={this.state.firstName} onChange={this.handleInputChange} />
-                        <br />
-                        <input className="form-control" id="demoLastName" rows="1" placeholder="Last Name" name="lastName" value={this.state.lastName} onChange={this.handleInputChange} />
-                        <br />
-                        <input className="form-control" id="demoPhone" rows="1" placeholder="Phone" name="phone" value={this.state.phone} onChange={this.handleInputChange} />
-                        <br />
-                        <input className="form-control" id="demoEmail" rows="1" placeholder="Email Address" name="email" value={this.state.email} onChange={this.handleInputChange} />
-                        <br />
+                        <hr />
+                        <h6>Student</h6>
+                        <label HTMLfor="demographics">7-digit Id:</label>
+                        <input className="form-control" id="demoStudId" rows="1" name="studentId" value={this.state.studentId} onChange={this.handleInputChange} />
+                        <label HTMLfor="demographics">First Name:</label>
+                        <input className="form-control" id="demoFirstName" rows="1" name="firstName" value={this.state.firstName} onChange={this.handleInputChange} />
+                        <label HTMLfor="demographics">Last Name:</label>
+                        <input className="form-control" id="demoLastName" rows="1" name="lastName" value={this.state.lastName} onChange={this.handleInputChange} />
+                        <label HTMLfor="demographics">Phone:</label>
+                        <input className="form-control" id="demoPhone" rows="1" name="phone" value={this.state.phone} onChange={this.handleInputChange} />
+                        <label HTMLfor="demographics">Email:</label>
+                        <input className="form-control" id="demoEmail" rows="1" name="email" value={this.state.email} onChange={this.handleInputChange} />
                     </div>
+                    <hr />
 
                     <div className="form-group">
-                        <label for="schedule">Schedule:</label>
+                        <h6>Schedule</h6>
+                        <label HTMLfor="schedule">Program:</label>
                         <select className="form-control" id="schedProgram" name="program" value={this.state.program} onChange={this.handleInputChange}>
-                            <option value="None">Choose a program:</option>
+                            <option value="None">None</option>
                             <option value="ABE">ABE</option>
                             <option value="GED">GED</option>
                             <option value="ESOL">ESOL</option>
                         </select>
-                        <br />
-                    
+                        <label HTMLfor="schedule">Schedule:</label>
                         <select className="form-control" id="schedTime" name="schedule" value={this.state.schedule} onChange={this.handleInputChange}>
-                            <option value="None">Choose a schedule:</option>
+                            <option value="None">None</option>
                             <option value="AM-1">Morning-1</option>
                             <option value="AM-2">Morning-2</option>
                             <option value="PM-1">Afternoon-1</option>
                             <option value="PM-2">Afternoon-2</option>
                         </select>
-                        <br />
-
+                        <label HTMLfor="schedule">Campus:</label>
                         <select className="form-control" id="schedCampus" name="campus" value={this.state.campus} onChange={this.handleInputChange}>
-                            <option value="None">Choose a campus:</option>
+                            <option value="None">None</option>
                             <option value="Main">Main</option>
                             <option value="Poinciana">Poinciana</option>
                             <option value="CHS">CHS</option>
                             <option value="KMS">KMS</option>
                         </select>
-                        <br />
-
+                        <label HTMLfor="schedule">Status:</label>
                         <select className="form-control" id="schedStatus" name="studentStatus" value={this.state.studentStatus} onChange={this.handleInputChange}>
                             <option value="Active">Active</option>
                             <option value="Inactive">Inactive</option>
                         </select>
-                        <br />
                     </div>
+                    <hr />
 
                     <div className="form-group">
-                        <label for="advise">Advisement:</label>
+                        <h6>Advisement</h6>
+                        <label HTMLfor="advise">Level of Education:</label>
                         <select className="form-control" id="adviseLevel" name="highLevelEd" value={this.state.highLevelEd} onChange={this.handleInputChange}>
-                            <option value="None">Choose highest level of education:</option>
+                            <option value="None">None</option>
                             <option value="less than than HS">HS Not Grad</option>
                             <option value="HS Grad">HS Grad</option>
                             <option value="Tech or Voc">Tech</option>
@@ -100,9 +101,9 @@ render() {
                             <option value="4-yr">4-yr</option>
                             <option value="Masters">Masters</option>
                         </select>
-                        <br />
+                        <label HTMLfor="advise">Goal:</label>
                         <select className="form-control" id="adviseGoal" name="goal" value={this.state.goal} onChange={this.handleInputChange}>
-                            <option value="None">Choose student goal:</option>
+                            <option value="None">None</option>
                             <option value="Improve English">Improve Eng</option>
                             <option value="GED">GED</option>
                             <option value="Tech or Voc">Tech</option>
@@ -110,9 +111,9 @@ render() {
                             <option value="Employment">Employment</option>
                             <option value="Job Promotion">Job Promotion</option>
                         </select>
-                        <br />
+                        <label HTMLfor="advise">Result:</label>
                         <select className="form-control" id="adviseResult" name="result" value={this.state.result} onChange={this.handleInputChange}>
-                            <option value="None">Choose student result:</option>
+                            <option value="None">None</option>
                             <option value="Level Increase">Improved Eng</option>
                             <option value="Attained GED">Got GED</option>
                             <option value="Enrolled Tech or Voc">Enrolled Tech</option>
@@ -120,16 +121,14 @@ render() {
                             <option value="Obtained Employment">Got Employment</option>
                             <option value="Obtained Job Promotion">Got Job Promotion</option>
                         </select>
-                        <br />
+                        <label HTMLfor="advise">Advisor:</label>
                         <select className="form-control" id="adviseAdvisor" name="advisor" value={this.state.advisor} onChange={this.handleInputChange}>
-                            <option value="None">Choose an advisor:</option>
+                            <option value="None">None</option>
                             <option value="Karen">Karen</option>
                             <option value="Diana">Diana</option>
                             <option value="Natalie">Natalie</option>
                         </select>
-                        <br />
                         {/* <input className="form-control" id="adviseNote" rows="3" placeholder="Enter notes here." name="notes" value={this.state.notes} onChange={this.handleInputChange} /> */}
-                        <br />
                     </div>
 
                     {/* <div className="form-group">
