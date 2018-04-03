@@ -6,24 +6,22 @@
 
 import React from 'react';
 import "./style.css";
-import Navbar from "../Navbar";
-import Footer from '../Footer';
+// import Navbar from "../Navbar";
+// import Footer from '../Footer';
 import Jumbotron from "./Jumbotron";
 import Card from "./Card";
 
 const Dashboard = (props) =>{
 	return (
 		<div className="container">
-			<Navbar 
-				{...props}
-			/>
 			<h2><i className="fa fa-dashboard"></i> Dashboard</h2><p />
+			
 			<Jumbotron />
 			
 			<div className="row">
-            	<div className="col">
-               		<div className="row panel-row">
-                    	<div className="col">
+				<div className="col">
+					<div className="row panel-row">
+						<div className="col">
 						<Card 
 							icon="fa fa-gear" 
 							cardHeader="Tools"
@@ -70,7 +68,6 @@ const Dashboard = (props) =>{
 					</div>
 				</div>
 			</div>		
-			<Footer />	
 		</div>
 	);
 }

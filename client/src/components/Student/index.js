@@ -37,18 +37,14 @@ class Student extends Component {
 render() {
     return(
         <div className="container">
-            <Navbar 
-                // {...props}
-            />
-                <h2><i className="fa fa-user"></i> Student</h2><p />
-                    <StudentForm
-                        handleFormSubmit={this.handleFormSubmit}
-                        handleInputChange={this.handleInputChange}
-                    /><p />
-                    <StudentResults
-                        newStudent={this.state.newStudent}
-                    />
-            <Footer />
+            <h2><i className="fa fa-user"></i> Student</h2><p />
+                <StudentForm
+                    handleFormSubmit={this.handleFormSubmit}
+                    handleInputChange={this.handleInputChange}
+                /><p />
+                <StudentResults
+                    newStudent={this.state.newStudent}
+                />
         </div>
 	);
 }

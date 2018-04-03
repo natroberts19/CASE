@@ -2,12 +2,12 @@ footer {
     text-align: center;
     background-color: rgb(2, 184, 117);
     font-family: Lato;
-    font-size: 12px;
+    font-size: 13px;
     color: white;
     /* font-weight: bold; */
     height: 60px;
     width:  100%;
     border-top: 5px solid;
     border-top-color: #4582EC;
-    padding-top: 20px;
+    padding-top: 15px;
 }

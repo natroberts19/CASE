@@ -12,7 +12,7 @@ const AllReport = (props) => {
 			<h5>All CASE Students</h5>
 			<table className="table table-hover" id="results">
 				<thead>
-					<tr className="table-success">
+					<tr className="table-success" style={{'color' : 'black'}}>
 						<th scope="col" id="studentId">Student Id</th>
 						<th scope="col" id="lastName">Last Name</th>
 						<th scope="col" id="firstName">First Name</th>
@@ -23,7 +23,7 @@ const AllReport = (props) => {
 					</tr>
 				</thead>
 				<tbody>
-				
+				Lorem Ipsum hee haw hee haw
 					{/* <!-- Results from DB Query here --> */}
 
 				</tbody>

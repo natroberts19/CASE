@@ -10,30 +10,30 @@ import "./style.css";
 const ReportTabs = (props) => {
 	return(
 
-		<ul className="nav nav-tabs">
-			<li
-			onClick={() => props.handlePageChange("MyActiveReport")}
-			className={props.currentPage === "MyActiveReport" ? "active" : ""}
+		<ul className="nav nav-pills nav-fill">
+			<li 
+				onClick={() => props.handlePageChange("MyActiveReport")}
+				className={props.currentPage === "MyActiveReport" ? "active" : ""}
 			>
-			<a>My Active Students</a>
+				<a className="nav-link">My Active Students</a>
 			</li>
-			<li
-			onClick={() => props.handlePageChange("MyInactiveReport")}
-			className={props.currentPage === "MyInactiveReport" ? "active" : ""}
+			<li 
+				onClick={() => props.handlePageChange("MyInactiveReport")}
+				className={props.currentPage === "MyInactiveReport" ? "active" : ""}
 			>
-			<a>My Inactive Students</a>
+				<a className="nav-link">My Inactive Students</a>
 			</li>
-			<li
-			onClick={() => props.handlePageChange("MyAllReport")}
-			className={props.currentPage === "MyAllReport" ? "active" : ""}
+			<li 
+				onClick={() => props.handlePageChange("MyAllReport")}
+				className={props.currentPage === "MyAllReport" ? "active" : ""}
 			>
-			<a>All My Students</a>
+				<a className="nav-link">All My Students</a>
 			</li>
-			<li
-			onClick={() => props.handlePageChange("AllReport")}
-			className={props.currentPage === "AllReport" ? "active" : ""}
+			<li 
+				onClick={() => props.handlePageChange("AllReport")}
+				className={props.currentPage === "AllReport" ? "active" : ""}
 			>
-			<a>All CASE Students</a>
+				<a className="nav-link">All CASE Students</a>
 			</li>
 		</ul>	
 

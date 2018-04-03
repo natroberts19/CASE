@@ -2,25 +2,26 @@
 
 import React from 'react';
 import "./style.css";
-// import Navbar from "../Navbar";
+import Navbar from "../Navbar";
 import Sidenav from "../Sidenav";
-// import Footer from '../Footer';
+import Footer from '../Footer';
 // Page components will render inside Home as they are called from the Sidenav!
-import Dashboard from "../Dashboard"
+// import Dashboard from "../Dashboard"
 // import Student from "../Student";
-// import Reports from "../Reports";
+import Reports from "../Reports";
 
 const Home = (props) =>{
 	return (
 		<div className="container">
-			
-			<Dashboard
+			<Navbar 
 				username={props.auth.username} 
 				handleLogout={props.handleLogout}
-				
 			/>
+
+			<Reports />
 			
 			<Sidenav />
+			<Footer />
 			
 		</div>
 		
