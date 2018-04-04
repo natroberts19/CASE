@@ -12,7 +12,7 @@ import Reports from "../Reports";
 
 const Home = (props) =>{
 	return (
-		<div className="container">
+		<div className="container" style={{"marginLeft":"200px"}}>
 			<Navbar 
 				username={props.auth.username} 
 				handleLogout={props.handleLogout}
