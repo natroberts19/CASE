@@ -4,6 +4,7 @@ module.exports = function (passport) {
 
 	router.use("/students",require("./students")(passport));
 	router.use("/notes",require("./notes")(passport));
+	router.use("/reports",require("./reports")(passport));
 
 	// router.get("/testroute", function(req, res) {
 	// 	res.send("you got me");

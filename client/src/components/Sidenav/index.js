@@ -1,3 +1,6 @@
+// --------------------------------------------------
+// Sidenav is used to toggle between page displays.
+// --------------------------------------------------
 import React from 'react';
 import "./style.css";
 import {Link} from 'react-router-dom';

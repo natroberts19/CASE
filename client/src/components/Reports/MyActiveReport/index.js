@@ -4,11 +4,31 @@
 // This component imports into the Reports page.
 // ------------------------------------------------------------------------------------------------------------------------
 
-import React from 'react';
+import React, {Component} from 'react';
+import ReportsAPI from "../../../utils/ReportsAPI";
 import "./style.css";
 
-const MyActiveReport = (props) => {
-	return(
+class MyActiveReport extends Component {
+	
+	state = {
+		students: [],
+	};
+
+	componentDidMount() {
+		this.loadMyActiveReport();
+	}
+
+	loadMyActiveReport = () => {
+		console.log("load my active report");
+		ReportsAPI.getMyActiveReport()
+		.then(res =>
+			this.setState({ students: res.data })
+		)
+		.catch(err => console.log(err));
+	}
+
+	render() {
+		return(
 		<div>
 			<h5>My Active Students</h5>
 				<table className="table table-hover" id="results">
@@ -23,27 +43,28 @@ const MyActiveReport = (props) => {
 							<th scope="col" id="advisor">Advisor</th>
 						</tr>
 					</thead>
-					<tbody>
-					<tr><td>1234567</td>
-						<td>Smith</td>
-						<td>John</td>
-						<td>407-555-1212</td>
-						<td>jsmith@gmail.com</td>
-						<td>Active</td>
-						<td>Natalie</td></tr>
-					<tr><td>3456987</td>
-						<td>Torres</td>
-						<td>Mary</td>
-						<td>407-555-3434</td>
-						<td>mtorres@gmail.com</td>
-						<td>Active</td>
-						<td>Natalie</td></tr>
-						{/* <!-- Results from DB Query here. Showing two hard code examples for now. --> */}
-
-					</tbody>
+					
+					{this.state.students.length ? (
+						<tbody>
+							{this.state.students.map(student => (
+								<tr key={student._id}>
+								<td>{student.studentId}</td>
+								<td>{student.lastName}</td>
+								<td>{student.firstName}</td>
+								<td>{student.phone}</td>
+								<td>{student.email}</td>
+								<td>{student.studentStatus}</td>
+								<td>{student.advisor}</td>
+								</tr>
+							))}
+						</tbody>
+					) : (
+						<tbody><tr><td> No results to display! </td></tr></tbody>
+					)}
 				</table>
-		</div>
+			</div>
 	);
+}
 }
 
 export default MyActiveReport;

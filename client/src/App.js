@@ -6,7 +6,6 @@ import axios from 'axios';
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home";
-// import Wrapper from ".components/Wrapper";
 // import Student from "./components/Student";
 // import Reports from "./components/Reports"
 

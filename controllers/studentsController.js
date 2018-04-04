@@ -1,6 +1,8 @@
+// -------------------------------------------------------
+// Defining methods for the studentsController.
+// -------------------------------------------------------
 const db = require("../models");
 
-// Defining methods for the studentsController
 module.exports = {
 
 // POST route for creating a new student in the database. 

@@ -1,6 +1,9 @@
+// -------------------------------------------------------
+// Defining methods for the notesController.
+// -------------------------------------------------------
+
 const db = require("../models");
 
-// Defining the methods for the Notes controller.
 module.exports = {
 
 // POST route for saving a new Note to the database and associating it with a Student.
@@ -20,7 +23,7 @@ module.exports = {
 
 // GET route to see all the notes for one student.
     getNote: function(req, res) {
-        console.log("This is the notes controller getNote")
+        console.log("This is the notes controller getNote.")
 
         db.Note
         .find()

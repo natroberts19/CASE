@@ -1,11 +1,10 @@
 // ---------------------------------------------------------------------------------------------------------
 // Student is a page that contains the StudentForm and StudentResults for entering a new student into the db.
-// This page also includes the Navbar and Footer.
 // ---------------------------------------------------------------------------------------------------------
 
 import React, { Component } from 'react';
-import Navbar from "../Navbar";
-import Footer from '../Footer';
+// import Navbar from "../Navbar";
+// import Footer from '../Footer';
 import StudentForm from "./StudentForm";
 import StudentResults from "./StudentResults"
 import axios from 'axios';
