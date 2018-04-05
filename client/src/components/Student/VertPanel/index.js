@@ -1,5 +1,6 @@
 import React from 'react';
 import "./style.css";
+import Table from "../VertPanel/Table"
 import TableStudent from "../VertPanel/TableStudent"
 import TableSchedule from "../VertPanel/TableSchedule"
 import TableAdvise from "../VertPanel/TableAdvise"
@@ -13,6 +14,7 @@ const VertPanel = (props) => {
                     <TableStudent {...props} />
                     <TableSchedule {...props} />
                     <TableAdvise {...props} />
+                    <Table header="Header" />
                     
                 </div>
         </div>

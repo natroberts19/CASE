@@ -18,7 +18,8 @@ const TableAdvise = (props) => {
 				<tr><td id="tdRowHead"> {props.rowHead12} </td><td> {props.newStudent.result} </td><td> <button type='submit' className='btn btn-primary' id='edit'>Edit</button></td></tr>
 				<tr><td id="tdRowHead"> {props.rowHead13} </td><td> {props.newStudent.advisor} </td><td> <button type='submit' className='btn btn-primary' id='edit'>Edit</button></td></tr>
 				<tr><td id="tdRowHead"> {props.rowHead14} </td><td> {props.newStudent.notes} </td><td> <button type='submit' className='btn btn-primary' id='add'>Add</button></td></tr>
-				<tr><td id="tdRowHead"> {props.rowHead15} </td><td> {props.newStudent.files} </td><td> <button type='submit' className='btn btn-primary' id='add'>Add</button></td></tr>
+
+				<tr><td id="tdRowHead" input type="file" className="form-control-file" id="inputFile" aria-describedby="fileHelp"> {props.rowHead15} </td><td> {props.newStudent.files} </td><td> <button type='submit' className='btn btn-primary' id='add'>Add</button></td></tr>
 			</tbody>
         </table>
 	);
