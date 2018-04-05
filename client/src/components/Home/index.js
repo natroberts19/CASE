@@ -7,8 +7,8 @@ import Sidenav from "../Sidenav";
 import Footer from '../Footer';
 // Page components will render inside Home as they are called from the Sidenav!
 // import Dashboard from "../Dashboard"
-// import Student from "../Student";
-import Reports from "../Reports";
+import Student from "../Student";
+// import Reports from "../Reports";
 
 const Home = (props) =>{
 	return (
@@ -18,14 +18,12 @@ const Home = (props) =>{
 				handleLogout={props.handleLogout}
 			/>
 
-			<Reports />
+			<Student />
 			
 			<Sidenav />
 			<Footer />
 			
 		</div>
-		
-		
 	);
 }
 

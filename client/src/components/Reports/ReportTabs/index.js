@@ -10,7 +10,7 @@ import "./style.css";
 const ReportTabs = (props) => {
 	return(
 
-		<ul className="nav nav-pills nav-fill">
+		<ul className="nav nav-tabs nav-fill">
 			<li 
 				onClick={() => props.handlePageChange("MyActiveReport")}
 				className={props.currentPage === "MyActiveReport" ? "active" : ""}
@@ -35,7 +35,9 @@ const ReportTabs = (props) => {
 			>
 				<a className="nav-link">All CASE Students</a>
 			</li>
-		</ul>	
+		</ul>
+		
+		
 
 	);
 }

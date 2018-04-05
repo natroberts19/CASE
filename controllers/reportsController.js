@@ -6,7 +6,7 @@ const db = require("../models");
 
 module.exports = {
 
-// GET query for retrieving all students from the database.
+// GET query for retrieving all students from the CASE database.
     findAllReport: function(req, res) {
         console.log("This is the reportsController findAll report.");
         db.Student

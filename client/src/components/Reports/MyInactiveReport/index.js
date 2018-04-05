@@ -31,6 +31,7 @@ class MyInactiveReport extends Component {
 		return(
 		<div>
 			<h5>My Inactive Students</h5>
+			<h7><a href="#">Export to CSV</a></h7>
 				<table className="table table-hover" id="results">
 					<thead>
 						<tr className="table-success" style={{'color' : 'black'}}>

@@ -4,7 +4,6 @@ import VertPanel from "../VertPanel";
 
 class StudentResults extends Component {
 
-
 render() {
     return(
         <VertPanel
@@ -30,6 +29,7 @@ render() {
                 rowHead15="Files:"
     
                 newStudent={ this.props.newStudent }
+                existingStudent={this.props.existingStudent}
 
         />
     );

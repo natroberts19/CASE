@@ -52,6 +52,7 @@ class Reports extends Component {
               currentPage={this.state.currentPage}
               handlePageChange={this.handlePageChange}
             />
+            <p />
             {this.renderPage()}
 
           </div>

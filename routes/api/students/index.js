@@ -7,12 +7,13 @@ module.exports = function (passport) {
 
     // Matches with "/api/students
     router.route("/")
-      .get(studentsController.findAll)
-      .post(studentsController.createOne)
+      // .get(studentsController.findAll)
+      .post(studentsController.createOne);
     
     // Matches with "/api/students/:id"
     router.route("/:id")
       .get(studentsController.findById)
+      .put(studentsController.updateById);
     
     module.exports = router;
 

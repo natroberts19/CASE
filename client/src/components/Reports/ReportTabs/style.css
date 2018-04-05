@@ -1,4 +1,10 @@
-.nav-link {
-    /* background-color: #4582EC; */
-    
-}
+
+  .nav-tabs > li > a {
+    border: medium none;
+  }
+  .nav-tabs > li > a:hover {
+    background-color: whitesmoke !important;
+      border: medium none;
+      border-radius: 0;
+      color:#fff;
+  }
