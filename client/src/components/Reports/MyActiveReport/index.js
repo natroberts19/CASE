@@ -6,7 +6,7 @@
 
 import React, {Component} from 'react';
 import ReportsAPI from "../../../utils/ReportsAPI";
-import "./style.css";
+// import "./style.css";
 
 class MyActiveReport extends Component {
 	
@@ -31,6 +31,7 @@ class MyActiveReport extends Component {
 		return(
 		<div>
 			<h5>My Active Students</h5>
+			<h7><a href="#">Export to CSV</a></h7>
 				<table className="table table-hover" id="results">
 					<thead>
 						<tr className="table-success" style={{'color' : 'black'}}>

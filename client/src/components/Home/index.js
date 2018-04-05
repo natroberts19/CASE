@@ -1,27 +1,33 @@
-// Home is the "wrapper" for each of the page components (Dashboard, Student, Reports, ToDo, Advisor). Home includes the top navbar, side nav bar, and the footer.
+// ---------------------------------------------------------------------------------------------------
+// Home is the "wrapper" for each of the page components (Dashboard, Student, Reports, ToDo, Advisor). 
+// Home also includes the top navbar, side nav bar, and the footer.
+// ---------------------------------------------------------------------------------------------------
 
 import React from 'react';
 import "./style.css";
-import Navbar from "../Navbar";
-import Sidenav from "../Sidenav";
-import Footer from '../Footer';
-// Page components will render inside Home as they are called from the Sidenav!
-// import Dashboard from "../Dashboard"
-import Student from "../Student";
+import {Link} from 'react-router-dom';
+// import Navbar from "../Navbar";
+// import Sidenav from "../Sidenav";
+// import Footer from '../Footer';
+// Page components will render inside Home as they are called from the Sidenav! 
+import Dashboard from "../Dashboard"
+// import Student from "../Student";
 // import Reports from "../Reports";
 
 const Home = (props) =>{
 	return (
-		<div className="container" style={{"marginLeft":"200px"}}>
-			<Navbar 
-				username={props.auth.username} 
-				handleLogout={props.handleLogout}
-			/>
-
-			<Student />
+		<div className="container" style={{"marginLeft" : "0px"}}>
 			
-			<Sidenav />
-			<Footer />
+			<Dashboard />
+			
+			<div className="sidenav">
+				<Link to = "/home/dashboard" ><i className="fa fa-dashboard"></i> Dashboard</Link>
+				<Link to = "/api/students" ><i className="fa fa-user"></i> Student</Link>
+				<Link to = "/api/reports" ><i className="fa fa-line-chart"></i> Reports</Link>
+				<Link to = "#" ><i className="fa fa-check-square"></i> Tasks</Link>
+				<Link to = "#" ><i className="fa fa-user-plus"></i> Advisor</Link>
+
+			</div>
 			
 		</div>
 	);

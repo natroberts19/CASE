@@ -83,6 +83,7 @@ render() {
                         </select>
                         <label HTMLfor="schedule">Status:</label>
                         <select className="form-control" id="schedStatus" name="studentStatus" value={this.state.studentStatus} onChange={this.handleInputChange}>
+                            <option value="None">None</option>
                             <option value="Active">Active</option>
                             <option value="Inactive">Inactive</option>
                         </select>

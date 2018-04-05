@@ -5,9 +5,11 @@ import axios from 'axios';
 
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
+// import Sidenav from "./components/Sidenav";
 import Home from "./components/Home";
-// import Student from "./components/Student";
-// import Reports from "./components/Reports"
+import Dashboard from "./components/Dashboard";
+import Student from "./components/Student";
+import Reports from "./components/Reports"
 
 class App extends Component {
   state = {
@@ -121,6 +123,13 @@ class App extends Component {
           } 
         }
         }/>
+
+        
+          <Route exact path="/home/dashboard" component={Dashboard} />
+          <Route exact path="/api/students" component={Student} />
+          <Route exact path="/api/reports" component={Reports} />
+          
+        
         
         </div>
       </Router>

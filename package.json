@@ -18,5 +18,8 @@
     "concurrently": "^3.5.1",
     "jest": "^22.4.2",
     "nodemon": "^1.17.2"
+  },
+  "dependencies": {
+    "csv-express": "^1.2.2"
   }
 }

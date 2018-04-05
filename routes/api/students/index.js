@@ -1,3 +1,7 @@
+// ----------------------------------
+// api routes for the Students page.
+// ----------------------------------
+
 module.exports = function (passport) {
 	const path = require("path");
 	const router = require('express').Router();

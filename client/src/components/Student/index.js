@@ -1,18 +1,22 @@
-// ---------------------------------------------------------------------------------------------------------
-// Student is a page that contains the student SearchForm, new StudentForm and StudentResults for entering 
+// ------------------------------------------------------------------------------------------------
+// Student is a page that contains the student SearchForm, new StudentForm and StudentResults for 
 // searching for an existing student or posting a new student into the db.
-// ---------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
 
 import React, { Component } from 'react';
 import StudentForm from "./StudentForm";
 import SearchForm from "./SearchForm";
 import StudentResults from "./StudentResults"
+import Sidenav from "../Sidenav";
+import Navbar from "../Navbar";
+import Footer from '../Footer';
 import axios from 'axios';
 
 class Student extends Component {
     // Set the initial values of all the form fields.
     state = {
-        newStudent: {}
+        newStudent: {},
+        existingStudent: {}
     };
 
     // Handle the new student form submit. Post student values.
@@ -31,10 +35,6 @@ class Student extends Component {
                 console.log(err);
             });    
     }
-
-    state = {
-        existingStudent: {}
-    };
 
     // Handle the search form submit. Get student values.
     handleSearchSubmit = (event, searchValues) => {
@@ -55,12 +55,18 @@ class Student extends Component {
 
 render() {
     return(
-        <div className="container">
+        <div className="container" style={{"marginLeft":"200px"}}>
+
+            <Navbar 
+                // username={props.auth.username} 
+                // handleLogout={props.handleLogout}
+            />
+
             <h2><i className="fa fa-user"></i> Student</h2><p />
                 <SearchForm
                     handleSearchSubmit={this.handleSearchSubmit}
                     handleInputChange={this.handleInputChange}
-                />
+                /><p />
                 <StudentForm
                     handleFormSubmit={this.handleFormSubmit}
                     handleInputChange={this.handleInputChange}
@@ -69,6 +75,9 @@ render() {
                     newStudent={this.state.newStudent}
                     existingStudent={this.state.existingStudent}
                 />
+
+            <Sidenav />
+          <Footer />
         </div>
 	);
 }

@@ -2,11 +2,9 @@
 // This report contains a table of students with a status of Inactive assigned to the logged in advisor. Sorted by last name.
 // This component imports into the Reports page.
 // --------------------------------------------------------------------------------------------------------------------------
-
-
 import React, {Component} from 'react';
 import ReportsAPI from "../../../utils/ReportsAPI";
-import "./style.css";
+// import "./style.css";
 
 class MyInactiveReport extends Component {
 	

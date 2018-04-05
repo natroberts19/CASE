@@ -6,14 +6,19 @@
 
 import React from 'react';
 import "./style.css";
-// import Navbar from "../Navbar";
-// import Footer from '../Footer';
+import Navbar from "../Navbar";
+import Sidenav from "../Sidenav";
+import Footer from '../Footer';
 import Jumbotron from "./Jumbotron";
 import Card from "./Card";
 
 const Dashboard = (props) =>{
 	return (
-		<div className="container">
+		<div className="container" style={{"marginLeft":"200px"}}>
+			<Navbar 
+				// username={props.auth.username} 
+				// handleLogout={props.handleLogout}
+			/>
 			<h2><i className="fa fa-dashboard"></i> Dashboard</h2><p />
 			
 			<Jumbotron />
@@ -67,7 +72,9 @@ const Dashboard = (props) =>{
 						</div>
 					</div>
 				</div>
-			</div>		
+			</div>	
+			<Sidenav />
+          <Footer />	
 		</div>
 	);
 }
