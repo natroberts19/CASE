@@ -15,8 +15,7 @@ import axios from 'axios';
 class Student extends Component {
     // Set the initial values of all the form fields.
     state = {
-        newStudent: {},
-        existingStudent: {}
+        student: {}
     };
 
     // Handle the new student form submit. Post student values.
@@ -28,7 +27,7 @@ class Student extends Component {
             .then((results)=>{ 
                 console.log("post new student results:", results);
                 this.setState({
-                    newStudent: results.data
+                    student: results.data
                 });
                 
             }).catch((err)=>{
@@ -45,7 +44,7 @@ class Student extends Component {
             .then((results)=>{ 
                 console.log("post search form results:", results);
                 this.setState({
-                    existingStudent: results.data
+                    student: results.data
                 });
                 
             }).catch((err)=>{
@@ -72,8 +71,7 @@ render() {
                     handleInputChange={this.handleInputChange}
                 /><p />
                 <StudentResults
-                    newStudent={this.state.newStudent}
-                    existingStudent={this.state.existingStudent}
+                    student={this.state.student}
                 />
 
             <Sidenav />

@@ -47,11 +47,9 @@ const Dashboard = (props) =>{
 							icon="fa fa-line-chart" 
 							cardHeader="Reports"
 							cardTitle="Your Students"
-							cardContent="110 Active Students. 62 Inactive Students."
-							cardLink1="#"
-							cardLink1Name="Link1 Name"
-							cardLink2="#"
-							cardLink2Name="Link2 Name" />
+							list1="Active Students: 110"
+							list2="Inctive Students: 62"
+						/>
 						
 						</div>
 					</div>
@@ -64,11 +62,8 @@ const Dashboard = (props) =>{
 							icon="fa fa-user-plus" 
 							cardHeader="Advisor"
 							cardTitle="MSGO"
-							cardContent="Your MSGO goal is 25%. Your current MSGO level is 23%."
-							cardLink1="#"
-							cardLink1Name="Link1 Name"
-							cardLink2="#"
-							cardLink2Name="Link2 Name"/>
+							list1="MSGO Goal: 25%"
+							list2="MSGO Current: 23%"/>
 						</div>
 					</div>
 				</div>

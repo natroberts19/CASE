@@ -17,8 +17,6 @@ class StudentForm extends Component {
         goal: "",
         result: "",
         advisor: ""
-        // notes: "",
-        // files: "",
     };
 
     // Handle changes to the input fields:

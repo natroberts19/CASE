@@ -5,20 +5,15 @@ import "./style.css";
 const Navbar = (props) => {
 	return(
 		<nav className="navbar navbar-expand-lg">
-  
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item">
-              You are logged in as {props.username}. <br />
-          </li>
-          <li className="nav-item">
-          <button className="btn btn-primary btn-sm" onClick = {props.handleLogout}>Log Out</button>
+            <li className="nav-item" style={{"fontSize" : "16px"}}>
+                You are logged in as {props.username}. <br />
             </li>
         </ul>
-          <form className="form-inline my-2 my-lg-0">
-            <input className="form-control mr-sm-1" type="text" placeholder="Search" />
-            <button className="btn btn-primary btn-sm" >Student Search</button>
-          </form>
-      </nav>
+        <span className="form-inline my-2 my-lg-0">
+          <button className="btn btn-primary btn-sm" onClick = {props.handleLogout}>Log Out</button>
+        </span>
+    </nav>
 	);
 }
 

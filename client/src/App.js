@@ -10,6 +10,8 @@ import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import Student from "./components/Student";
 import Reports from "./components/Reports"
+import Tasks from "./components/Tasks"
+import Advisor from "./components/Advisor"
 
 class App extends Component {
   state = {
@@ -128,6 +130,8 @@ class App extends Component {
           <Route exact path="/home/dashboard" component={Dashboard} />
           <Route exact path="/api/students" component={Student} />
           <Route exact path="/api/reports" component={Reports} />
+          <Route exact path="/api/tasks" component={Tasks} />
+          <Route exact path="/api/advisor" component={Advisor} />
           
         
         
