@@ -21,8 +21,8 @@ const Tasks = (props) =>{
 						Featured
 					</div>
 					<div class="card-body">
-						<h5 class="card-title">Special title treatment</h5>
-						<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+						<h5 class="card-title">Add and Update Tasks: </h5>
+						<p class="card-text">Build to-do tasks here...</p>
 						<a href="#" class="btn btn-primary">Go somewhere</a>
 					</div>
 				</div>	

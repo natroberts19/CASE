@@ -4,6 +4,7 @@
 // ------------------------------------------------------------------------------------------------
 
 import React, { Component } from 'react';
+import StudentTabs from "./StudentTabs";
 import StudentForm from "./StudentForm";
 import SearchForm from "./SearchForm";
 import StudentResults from "./StudentResults"
@@ -15,7 +16,22 @@ import axios from 'axios';
 class Student extends Component {
     // Set the initial values of all the form fields.
     state = {
-        student: {}
+        student: {},
+        currentPage: "SearchForm"
+    };
+
+    handlePageChange = page => {
+        this.setState({ currentPage: page });
+      };
+
+    renderPage = () => {
+    if (this.state.currentPage === "SearchForm") {
+        return <SearchForm />;
+    } else if (this.state.currentPage === "StudentForm"){
+        return <StudentForm />;
+    } else {
+        return <StudentResults />;
+    }
     };
 
     // Handle the new student form submit. Post student values.
@@ -35,14 +51,31 @@ class Student extends Component {
             });    
     }
 
-    // Handle the search form submit. Get student values.
+    // Handle the search form submit. Get student values. * Need Error handling *
     handleSearchSubmit = (event, searchValues) => {
-        console.log(searchValues);
+        console.log(searchValues.studentId);
         event.preventDefault();
         
-        axios.post("/api/students/:id", searchValues)
+        axios.get(`/api/students/search/${searchValues.studentId}`)
             .then((results)=>{ 
-                console.log("post search form results:", results);
+                console.log("get search form results:", results);
+                this.setState({
+                    student: results.data
+                });
+                
+            }).catch((err)=>{
+                console.log(err);
+            });
+    }
+
+    // Handle the edit button submit. Change student values.
+    handleEditSubmit = (event, editValues) => {
+        console.log(editValues);
+        event.preventDefault();
+        
+        axios.post("/api/students/:id", editValues)
+            .then((results)=>{ 
+                console.log("edit button results:", results);
                 this.setState({
                     student: results.data
                 });
@@ -62,7 +95,18 @@ render() {
             />
 
             <h2><i className="fa fa-user"></i> Student</h2><p />
-                <SearchForm
+                <div className="container">
+                    <StudentTabs
+                    currentPage={this.state.currentPage}
+                    handlePageChange={this.handlePageChange}
+                    />
+                    <p />
+                    {this.renderPage()}
+
+                    </div>
+                
+                
+                {/* <SearchForm
                     handleSearchSubmit={this.handleSearchSubmit}
                     handleInputChange={this.handleInputChange}
                 /><p />
@@ -72,7 +116,8 @@ render() {
                 /><p />
                 <StudentResults
                     student={this.state.student}
-                />
+                    handleEditSubmit={this.handleEditSubmit}
+                /> */}
 
             <Sidenav />
           <Footer />

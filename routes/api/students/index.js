@@ -17,7 +17,11 @@ module.exports = function (passport) {
     // Matches with "/api/students/:id"
     router.route("/:id")
       .get(studentsController.findById)
-      .put(studentsController.updateById);
+      .put(studentsController.updateOne);
+
+    // Matches with "/api/students/search/:search"
+    router.route("/search/:searchId")
+      .get(studentsController.findBySearch);
     
     module.exports = router;
 
