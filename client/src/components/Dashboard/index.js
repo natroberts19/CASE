@@ -1,18 +1,116 @@
 // ---------------------------------------------------------------------------------------------------------
-// Dashboard is a page that contains the Jumbotron (announcements) and the Cards (snapshot views).
+// Dashboard is a page that contains the Jumbotron (announcements) and the Cards (snapshot views of data).
 // This should be the default page view when a user logs in.
 // Each page also includes the Navbar and Footer.
 // ---------------------------------------------------------------------------------------------------------
 
-import React from 'react';
+import React, {Component} from 'react';
 import "./style.css";
 import Navbar from "../Navbar";
 import Sidenav from "../Sidenav";
 import Footer from '../Footer';
 import Jumbotron from "./Jumbotron";
 import Card from "./Card";
+import AdvisorsAPI from "../../utils/AdvisorsAPI"
+import StudentsAPI from "../../utils/StudentsAPI"
 
-const Dashboard = (props) =>{
+class Dashboard extends Component {
+
+	state = {
+		countmyactive: [],
+		countmyinactive: [],
+		countmyall: [],
+		countkaren: [],
+		countdiana: [],
+		countabe: [],
+		countged: [],
+		countesol: []
+	};
+
+	componentDidMount() {
+		this.loadCountMyActive();
+		this.loadCountMyInactive();
+		this.loadCountMyAll();
+		this.loadCountKarenActive();
+		this.loadCountDianaActive();
+		this.loadCountABE();
+		this.loadCountGED();
+		this.loadCountESOL();
+	}
+
+	loadCountMyActive = () => {
+		console.log("load my count of active students");
+		AdvisorsAPI.getCountMyActive()
+		.then(res =>
+			this.setState({ countmyactive: res.data })
+		)
+		.catch(err => console.log(err));
+	}
+
+	loadCountMyInactive = () => {
+		console.log("load my count of inactive students");
+		AdvisorsAPI.getCountMyInactive()
+		.then(res =>
+			this.setState({ countmyinactive: res.data })
+		)
+		.catch(err => console.log(err));
+	}
+
+	loadCountMyAll = () => {
+		console.log("load my total of all students");
+		AdvisorsAPI.getCountMyAll()
+		.then(res =>
+			this.setState({ countmyall: res.data })
+		)
+		.catch(err => console.log(err));
+	}
+
+	loadCountKarenActive = () => {
+		console.log("load Karen's count of active students");
+		AdvisorsAPI.getCountKarenActive()
+		.then(res =>
+			this.setState({ countkaren: res.data })
+		)
+		.catch(err => console.log(err));
+	}
+
+	loadCountDianaActive = () => {
+		console.log("load Diana's count of active students");
+		AdvisorsAPI.getCountDianaActive()
+		.then(res =>
+			this.setState({ countdiana: res.data })
+		)
+		.catch(err => console.log(err));
+	}
+
+	loadCountABE = () => {
+		console.log("load count of ABE students");
+		StudentsAPI.getCountABE()
+		.then(res =>
+			this.setState({ countabe: res.data })
+		)
+		.catch(err => console.log(err));
+	}
+
+	loadCountGED = () => {
+		console.log("load count of GED students");
+		StudentsAPI.getCountGED()
+		.then(res =>
+			this.setState({ countged: res.data })
+		)
+		.catch(err => console.log(err));
+	}
+
+	loadCountESOL = () => {
+		console.log("load count of ESOL students");
+		StudentsAPI.getCountESOL()
+		.then(res =>
+			this.setState({ countesol: res.data })
+		)
+		.catch(err => console.log(err));
+	}
+
+render() {
 	return (
 		<div className="container" style={{"marginLeft":"200px"}}>
 			<Navbar 
@@ -28,14 +126,18 @@ const Dashboard = (props) =>{
 					<div className="row panel-row">
 						<div className="col">
 						<Card 
-							icon="fa fa-gear" 
-							cardHeader="Tools"
-							cardTitle="Tools"
-							cardContent="Tools description here."
-							cardLink1="https://www.remind.com/"
-							cardLink1Name="Remind.com"
-							cardLink2="https://calendly.com/"
-							cardLink2Name="Calendly.com" />
+							icon="fa fa-user" 
+							cardHeader="Student"
+							cardTitle="Program Stats"
+							cardContent="Total number of CASE students by program."
+							label1="ABE: "
+							list1={this.state.countabe}
+							label2="GED: "
+							list2={this.state.countged}
+							label3="ESOL: "
+							list3={this.state.countesol}
+						/>
+						
 						</div>
 					</div>
 				</div>
@@ -46,9 +148,14 @@ const Dashboard = (props) =>{
 						<Card 
 							icon="fa fa-line-chart" 
 							cardHeader="Reports"
-							cardTitle="Your Students"
-							list1="Active Students: 110"
-							list2="Inctive Students: 62"
+							cardTitle="My Students"
+							cardContent="These are summary counts of all my students."
+							label1="Active Students: "
+							list1={this.state.countmyactive}
+							label2="Inactive Students: "
+							list2={this.state.countmyinactive}
+							label3="Total Students: "
+							list3={this.state.countmyall}
 						/>
 						
 						</div>
@@ -61,9 +168,15 @@ const Dashboard = (props) =>{
 						<Card 
 							icon="fa fa-user-plus" 
 							cardHeader="Advisor"
-							cardTitle="MSGO"
-							list1="MSGO Goal: 25%"
-							list2="MSGO Current: 23%"/>
+							cardTitle="Summary"
+							cardContent="This is a summary of all active students by advisor."
+							label1="Natalie:  "
+							list1={this.state.countmyactive}
+							label2="Karen:  "
+							list2={this.state.countkaren}
+							label3="Diana:  "
+							list3={this.state.countdiana}
+						/>
 						</div>
 					</div>
 				</div>
@@ -72,6 +185,7 @@ const Dashboard = (props) =>{
           <Footer />	
 		</div>
 	);
+}
 }
 
 export default Dashboard;

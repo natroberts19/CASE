@@ -17,6 +17,14 @@ module.exports = function (passport) {
     router.route("/findmyall")
       .get(reportsController.findMyAllReport)
 
+  // Matches with "/api/reports/"
+    router.route("/countabe")
+      .get(reportsController.countABE);
+    router.route("/countged")
+      .get(reportsController.countGED);
+    router.route("/countesol")
+      .get(reportsController.countESOL);
+
   // The following routes handle exporting report data to .csv files.
     // router.route("/findall/exporttocsv")
     //   .get(reportsController.findAllReport)

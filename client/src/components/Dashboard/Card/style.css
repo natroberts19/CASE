@@ -5,3 +5,8 @@
 .card-header {
     background-color: rgb(2, 184, 117);
 }
+
+.list-group-item {
+    font-weight: bold;
+    font-size: 16px;
+}

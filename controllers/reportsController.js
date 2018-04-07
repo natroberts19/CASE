@@ -51,4 +51,45 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
+
+// GET routes for counting all ABE, GED, and ESOL students from the database.
+    countABE: function(req, res) {
+        console.log("this is studentsController to count all ABE students");
+        db.Student
+        .find({
+            program: "ABE"
+        })
+        .count({}, function (err, count) {
+            console.log("count ABE", count);
+        })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    },
+
+    countGED: function(req, res) {
+        console.log("this is to count all GED students");
+        db.Student
+        .find({
+            program: "GED"
+        })
+        .count({}, function (err, count) {
+            console.log("count GED", count);
+        })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    },
+
+    countESOL: function(req, res) {
+        console.log("this is to count all ESOL students");
+        db.Student
+        .find({
+            program: "ESOL"
+        })
+        .count({}, function (err, count) {
+            console.log("count ESOL", count);
+        })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    }
+
 };

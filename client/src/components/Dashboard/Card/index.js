@@ -10,9 +10,9 @@ const Card = (props) => {
    						 <h4 className="card-title"> {props.cardTitle} </h4>
    						 <p className="card-text"> {props.cardContent} </p>
 							<ul className="list-group list-group-flush">
-								<li className="list-group-item">{props.list1}</li>
-								<li className="list-group-item">{props.list2}</li>
-								<li className="list-group-item">{props.list3}</li>
+								<li className="list-group-item">{props.label1} {props.list1}</li>
+								<li className="list-group-item">{props.label2} {props.list2}</li>
+								<li className="list-group-item">{props.label3} {props.list3}</li>
 							</ul>
 							
 							<a href= {props.cardLink1} className="card-link" target="_blank" rel="noopener noreferrer" > {props.cardLink1Name} </a>

@@ -23,12 +23,12 @@ const StudentTabs = (props) => {
 			>
 				<a className="nav-link">Add New Students</a>
 			</li>
-			<li 
+			{/* <li 
 				onClick={() => props.handlePageChange("StudentResults")}
 				className={props.currentPage === "StudentResults" ? "active" : ""}
 			>
 				<a className="nav-link">Results</a>
-			</li>
+			</li> */}
 		</ul>
 		
 		

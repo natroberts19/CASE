@@ -7,14 +7,14 @@ import React, { Component } from 'react';
 import StudentTabs from "./StudentTabs";
 import StudentForm from "./StudentForm";
 import SearchForm from "./SearchForm";
-import StudentResults from "./StudentResults"
 import Sidenav from "../Sidenav";
 import Navbar from "../Navbar";
 import Footer from '../Footer';
 import axios from 'axios';
+// import StudentResults from './StudentResults';
 
 class Student extends Component {
-    // Set the initial values of all the form fields.
+    // Set the initial value of the tabs and values of all the form fields.
     state = {
         student: {},
         currentPage: "SearchForm"
@@ -27,10 +27,8 @@ class Student extends Component {
     renderPage = () => {
     if (this.state.currentPage === "SearchForm") {
         return <SearchForm />;
-    } else if (this.state.currentPage === "StudentForm"){
-        return <StudentForm />;
     } else {
-        return <StudentResults />;
+        return <StudentForm />;
     }
     };
 
@@ -102,8 +100,8 @@ render() {
                     />
                     <p />
                     {this.renderPage()}
-
-                    </div>
+                    
+                </div>
                 
                 
                 {/* <SearchForm

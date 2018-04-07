@@ -57,7 +57,7 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
 
-// GET regex query to find student by user input.
+// GET query to find student by 7-digit id.
     findBySearch: function(req, res) {
         console.log("this is find by 7-digit id", req.params.searchId);
         // const query = "";
@@ -70,9 +70,7 @@ module.exports = {
                 res.json(dbModel)
             } else {
                 res.json({"message": "Student not found"})
-            }
-            
-        
+            }        
         })
         .catch(err => res.status(422).json(err));
     },
@@ -86,14 +84,5 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     }
 
-// GET route for retrieving all students from the database.
-    // findAll: function(req, res) {
-    //     console.log("this is find all students");
-    //     db.Student
-    //     .find()
-    //     .sort({ date: 1 })
-    //     .then(dbModel => res.json(dbModel))
-    //     .catch(err => res.status(422).json(err));
-    // }
-  
+
 };

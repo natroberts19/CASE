@@ -1,3 +1,8 @@
+// -----------------------------------------------------------------------------------------------------------
+// StudentResults is the component to hold the results Table from the StudentForm and SearchForm.
+// This component imports into the Student page.
+// -----------------------------------------------------------------------------------------------------------
+
 import React, { Component } from 'react';
 import "./style.css";
 import Table from "../Table"
