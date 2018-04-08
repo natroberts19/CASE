@@ -18,6 +18,8 @@ module.exports = function (passport) {
       .get(advisorsController.countKarenActive)
     router.route("/countdianaactive")
       .get(advisorsController.countDianaActive)
+    router.route("/countmsgoresult")
+      .get(advisorsController.countMSGOResult)
 
     module.exports = router;
 

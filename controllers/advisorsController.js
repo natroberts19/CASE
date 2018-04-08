@@ -37,7 +37,7 @@ module.exports = {
 
 // GET query for finding all Inactive students with Advisor = "Natalie."
     countMyInactive: function(req, res) {
-        console.log("This is the advisorsController countMyActive report.");
+        console.log("This is the advisorsController countMyInactive report.");
         db.Student
         .find({
             advisor: "Natalie",
@@ -75,6 +75,21 @@ module.exports = {
         })
         .count({}, function (err, count) {
             console.log("count Diana active", count);
+        })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    },
+
+     // GET query for finding the MSGO count of all students with a higher result.
+     countMSGOResult: function(req, res) {
+        console.log("This is the advisorsController MSGO result count.");
+        db.Student
+        .find({
+            advisor: "Natalie",
+            result: { $in: ['Improved Eng Level', 'Got GED', 'Enrolled Tech', 'Enrolled College', 'Got Employment', 'Got Job Promotion'] }
+        })
+        .count({}, function (err, count) {
+            console.log("MSGO Result Count", count);
         })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));

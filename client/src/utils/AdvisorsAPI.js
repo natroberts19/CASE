@@ -29,5 +29,10 @@ export default {
     // GET all students by advisor.
     getCountDianaActive: function(status, advisor) {
         return axios.get("/api/advisors/countdianaactive", )
-    }   
+    },
+
+    // GET all students with a result by advisor.
+    getCountMSGOResult: function() {
+        return axios.get("/api/advisors/countmsgoresult", )
+    }
 };

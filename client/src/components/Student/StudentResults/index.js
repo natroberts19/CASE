@@ -1,6 +1,7 @@
 // -----------------------------------------------------------------------------------------------------------
 // StudentResults is the component to hold the results Table from the StudentForm and SearchForm.
 // This component imports into the Student page.
+// *I now want it to import into Student Form and Search Form *
 // -----------------------------------------------------------------------------------------------------------
 
 import React, { Component } from 'react';

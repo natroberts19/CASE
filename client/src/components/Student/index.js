@@ -91,7 +91,7 @@ render() {
                 // username={props.auth.username} 
                 // handleLogout={props.handleLogout}
             />
-
+        
             <h2><i className="fa fa-user"></i> Student</h2><p />
                 <div className="container">
                     <StudentTabs
