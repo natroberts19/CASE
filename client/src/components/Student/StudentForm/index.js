@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./style.css";
+// import StudentResults from '../StudentResults';
 
 class StudentForm extends Component {
     // Set the initial values of all the form fields (this.state.field).
@@ -153,6 +154,9 @@ render() {
                             <div className="container" id="studentForm"> 
                             <legend><i class="fa fa-edit"></i> Results</legend>
                             <hr />
+
+                            {/* <StudentResults /> */}
+
                             </div>
                         </div>
                     </div>

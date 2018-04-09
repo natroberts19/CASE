@@ -44,6 +44,9 @@ render() {
                         <div className="container" id="studentForm"> 
                         <legend><i class="fa fa-edit"></i> Results</legend>
                         <hr />
+
+                        {/* <StudentResults /> */}
+
                         </div>
                     </div>
                 </div>

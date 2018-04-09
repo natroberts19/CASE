@@ -12,7 +12,6 @@ import AdvisorsAPI from '../../utils/AdvisorsAPI';
 
 class Advisor extends Component {
 
-
 state = {
 	countmyall: [],
 	countmsgoresult: []
