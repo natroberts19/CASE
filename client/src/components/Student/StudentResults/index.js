@@ -36,7 +36,6 @@ class StudentResults extends Component {
 
         return(
             <div className="container" id="studentResults">
-                <legend><i class="fa fa-edit"></i> Results</legend>
                     <div className="panel-body">
 
                         <Table header="Student" tableData={student} /> 

@@ -46,8 +46,8 @@ render() {
 		
 		<div className="container" style={{"marginLeft":"200px"}}>
 			<Navbar 
-				// username={props.auth.username} 
-				// handleLogout={props.handleLogout}
+				username={this.props.auth.username} 
+				handleLogout={this.props.handleLogout}
 			/>
 			<h2><i className="fa fa-user-plus"></i> Advisor</h2><p />
 				<div className="card">

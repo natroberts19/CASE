@@ -12,8 +12,8 @@ const Tasks = (props) =>{
 	return (
 		<div className="container" style={{"marginLeft":"200px"}}>
 			<Navbar 
-				// username={props.auth.username} 
-				// handleLogout={props.handleLogout}
+				// username={this.props.auth.username} 
+				// handleLogout={this.props.handleLogout}
 			/>
 			<h2><i className="fa fa-check-square"></i> Tasks</h2><p />
 				<div class="card">

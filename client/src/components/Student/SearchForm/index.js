@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "./style.css";
-// import StudentResults from "../StudentResults"
+import StudentResults from "../StudentResults";
+import axios from "axios";
 
 class SearchForm extends Component {
 // Set the initial values of all the form fields (this.state.field).
@@ -16,6 +17,23 @@ handleInputChange = event => {
 	});
 };
 
+// Handle the search form submit. Get student values. * Need Error handling *
+handleSearchSubmit = (event, searchValues) => {
+    console.log(searchValues.studentId);
+    event.preventDefault();
+    
+    axios.get(`/api/students/search/${searchValues.studentId}`)
+        .then((results)=>{ 
+            console.log("get search form results:", results);
+            this.setState({
+                student: results.data
+            });
+            
+        }).catch((err)=>{
+            console.log(err);
+        });
+}
+
 render() {
 	return(
 		<div className="row">
@@ -23,14 +41,13 @@ render() {
 				<div className="row panel-row">
 					<div className="col">
                         <div className="container" id="searchForm"> 
-                            <form onSubmit={(event) => this.props.handleSearchSubmit(event, this.state)}>
+                            <form onSubmit={(event) => this.handleSearchSubmit(event, this.state)}>
                                 <fieldset>
                                     <div className="form-group">
                                         <legend><i class="fa fa-search"></i> Search</legend>
                                         <label HTMLfor="search">Enter 7-digit id:</label>
                                         <input className="form-control" id="searchStudId" rows="1" name="studentId" value={this.state.studentId} onChange={this.handleInputChange} />
-                                        
-                                        </div>
+                                    </div>
                                     <button type="submit" className="btn btn-primary" id="existingStudent">Search</button>
                                 </fieldset>
                             </form>
@@ -45,7 +62,11 @@ render() {
                         <legend><i class="fa fa-edit"></i> Results</legend>
                         <hr />
 
-                        {/* <StudentResults /> */}
+                            { 
+                                this.state.student ? <StudentResults student={this.state.student}/> : null
+                                
+                            }
+                            
 
                         </div>
                     </div>

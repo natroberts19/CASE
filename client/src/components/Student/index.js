@@ -26,28 +26,11 @@ class Student extends Component {
 
     renderPage = () => {
     if (this.state.currentPage === "SearchForm") {
-        return <SearchForm />;
+        return <SearchForm handleSearchSubmit={this.handleSearchSubmit}/>;
     } else {
-        return <StudentForm />;
+        return <StudentForm handleFormSubmit={this.handleFormSubmit}/>;
     }
     };
-
-    // Handle the new student form submit. Post student values.
-    handleFormSubmit = (event, formValues) => {
-        console.log(formValues);
-        event.preventDefault();
-        
-        axios.post("/api/students", formValues)
-            .then((results)=>{ 
-                console.log("post new student results:", results);
-                this.setState({
-                    student: results.data
-                });
-                
-            }).catch((err)=>{
-                console.log(err);
-            });    
-    }
 
     // Handle the search form submit. Get student values. * Need Error handling *
     handleSearchSubmit = (event, searchValues) => {
@@ -67,29 +50,29 @@ class Student extends Component {
     }
 
     // Handle the edit button submit. Change student values.
-    handleEditSubmit = (event, editValues) => {
-        console.log(editValues);
-        event.preventDefault();
-        
-        axios.post("/api/students/:id", editValues)
-            .then((results)=>{ 
-                console.log("edit button results:", results);
-                this.setState({
-                    student: results.data
-                });
-                
-            }).catch((err)=>{
-                console.log(err);
-            });
-    }
+        // handleEditSubmit = (event, editValues) => {
+        //     console.log(editValues);
+        //     event.preventDefault();
+            
+        //     axios.post("/api/students/:id", editValues)
+        //         .then((results)=>{ 
+        //             console.log("edit button results:", results);
+        //             this.setState({
+        //                 student: results.data
+        //             });
+                    
+        //         }).catch((err)=>{
+        //             console.log(err);
+        //         });
+        // }
 
 render() {
     return(
         <div className="container" style={{"marginLeft":"200px"}}>
 
             <Navbar 
-                // username={props.auth.username} 
-                // handleLogout={props.handleLogout}
+                username={this.props.auth.username} 
+				handleLogout={this.props.handleLogout}
             />
         
             <h2><i className="fa fa-user"></i> Student</h2><p />
@@ -102,7 +85,6 @@ render() {
                     {this.renderPage()}
                     
                 </div>
-                
                 
                 {/* <SearchForm
                     handleSearchSubmit={this.handleSearchSubmit}

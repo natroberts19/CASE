@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 var StudentSchema = new Schema({
     studentId: {
         type: String,
-        trim: true,
+        trim: true
         // unique: true,
         // validate: [
         //     // Function takes in the new `longstring` value to be saved as an argument
@@ -31,41 +31,41 @@ var StudentSchema = new Schema({
     },
     phone: {
         type: String,
-        trim: true,
+        trim: true
         // required: true
     },
     email: {
         type: String,
-        trim: true,
-        match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+        trim: true
+        // match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
     program: {
-        type: String,
+        type: String
         // required: true
     },
     schedule: {
-        type: String,
+        type: String
         // required: true
     },
     campus: {
-        type: String,
+        type: String
         // required: true
     },
     studentStatus: {
-        type: String,
+        type: String
         // required: true
     },
     numContacts: {
-        type: Number,
+        type: Number
     },
     highLevelEd: {
-        type: String,
+        type: String
     },
     goal: {
-        type: String,
+        type: String
     },
     result: {
-        type: String,
+        type: String
     },
     advisor: {
         type: String,

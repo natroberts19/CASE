@@ -46,8 +46,8 @@ class Reports extends Component {
     return (
       <div className="container" style={{"marginLeft":"200px"}}>
           <Navbar 
-            // username={props.auth.username} 
-            // handleLogout={props.handleLogout}
+            username={this.props.auth.username} 
+            handleLogout={this.props.handleLogout}
           />
         
           <h2><i className="fa fa-line-chart"></i> Reports</h2><p />

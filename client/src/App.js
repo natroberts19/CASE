@@ -6,7 +6,7 @@ import axios from 'axios';
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 // import Sidenav from "./components/Sidenav";
-import Home from "./components/Home";
+// import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import Student from "./components/Student";
 import Reports from "./components/Reports"
@@ -117,27 +117,52 @@ class App extends Component {
             />
           }  
         }}/>
-        <Route exact path = "/home" render = {()=> {
-          if(!loggedIn){
-            return <Redirect to = "/" />
-          } else {
-            return <Home handleLogout = {this.handleLogout} auth = { this.state.auth }/>
-          } 
-        }
-        }/>
 
-        {/* <Route exact path="/home/dashboard" render={()=>{
+        <Route exact path="/home" render={()=>{
           if(this.state.auth.isAuthenticated){
-            return <Dashboard />
+            return <Dashboard handleLogout = {this.handleLogout} auth = { this.state.auth }/>
           } else {
             return <Redirect to="/" />
           }
-        }} /> */}
-          <Route exact path="/home/dashboard" component={Dashboard} />
-          <Route exact path="/api/students" component={Student} />
-          <Route exact path="/api/reports" component={Reports} />
-          <Route exact path="/api/tasks" component={Tasks} />
-          <Route exact path="/api/advisor" component={Advisor} />
+        }} />
+
+        <Route exact path="/api/students" render={()=>{
+          if(this.state.auth.isAuthenticated){
+            return <Student handleLogout = {this.handleLogout} auth = { this.state.auth }/>
+          } else {
+            return <Redirect to="/" />
+          }
+        }} />
+
+        <Route exact path="/api/reports" render={()=>{
+          if(this.state.auth.isAuthenticated){
+            return <Reports handleLogout = {this.handleLogout} auth = { this.state.auth }/>
+          } else {
+            return <Redirect to="/" />
+          }
+        }} />
+
+        <Route exact path="/api/tasks" render={()=>{
+          if(this.state.auth.isAuthenticated){
+            return <Tasks handleLogout = {this.handleLogout} auth = { this.state.auth }/>
+          } else {
+            return <Redirect to="/" />
+          }
+        }} />
+
+        <Route exact path="/api/advisor" render={()=>{
+          if(this.state.auth.isAuthenticated){
+            return <Advisor handleLogout = {this.handleLogout} auth = { this.state.auth }/>
+          } else {
+            return <Redirect to="/" />
+          }
+        }} />
+
+          {/* <Route exact path="/home/dashboard" component={Dashboard} /> */}
+          {/* <Route exact path="/api/students" component={Student} /> */}
+          {/* <Route exact path="/api/reports" component={Reports} /> */}
+          {/* <Route exact path="/api/tasks" component={Tasks} /> */}
+          {/* <Route exact path="/api/advisor" component={Advisor} /> */}
           
         
         

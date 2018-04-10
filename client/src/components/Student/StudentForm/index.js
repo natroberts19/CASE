@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "./style.css";
-// import StudentResults from '../StudentResults';
+import StudentResults from '../StudentResults';
+import axios from 'axios';
 
 class StudentForm extends Component {
     // Set the initial values of all the form fields (this.state.field).
@@ -28,10 +29,22 @@ class StudentForm extends Component {
         });
     };
 
-    // handleFormSubmit = event => {
-    //     this.props.handleFormSubmit(event, this.state)
-    // set state back to initial values here...
-    // }
+   // Handle the new student form submit. Post student values.
+   handleFormSubmit = (event, formValues) => {
+    console.log(formValues);
+    event.preventDefault();
+    
+    axios.post("/api/students", formValues)
+        .then((results)=>{ 
+            console.log("post new student results:", results);
+            this.setState({
+                student: results.data
+            });
+            
+        }).catch((err)=>{
+            console.log(err);
+        });    
+    }
 
 render() {
     return(
@@ -40,7 +53,7 @@ render() {
 					<div className="row panel-row">
 						<div className="col">
                             <div className="container" id="studentForm"> 
-                                <form onSubmit={(event) => this.props.handleFormSubmit(event, this.state)}>
+                                <form onSubmit={(event) => this.handleFormSubmit(event, this.state)}>
                                     <fieldset>
                                         <div className="form-group">
                                             <legend><i class="fa fa-plus"></i> Add New</legend>
@@ -155,8 +168,10 @@ render() {
                             <legend><i class="fa fa-edit"></i> Results</legend>
                             <hr />
 
-                            {/* <StudentResults /> */}
-
+                            { 
+                                this.state.student ? <StudentResults student={this.state.student}/> : null
+                            }
+                            
                             </div>
                         </div>
                     </div>
