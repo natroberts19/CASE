@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------------------------
-// Tasks is a page that contains a to-do list of items for the logged in advisor.
+// Tasks is a page that contains a task builder and list of to-do items for the logged in advisor.
 // ---------------------------------------------------------------------------------------------------------
 
 import React from 'react';
@@ -21,11 +21,49 @@ const Tasks = (props) =>{
 						Featured
 					</div>
 					<div class="card-body">
-						<h5 class="card-title">Add and Update Tasks: </h5>
-						<p class="card-text">Build to-do tasks here...</p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
+						<h5 class="card-title">Task Builder: </h5>
+						<p class="card-text">Build your own "to-do" list here...</p>
+							<div className="row">
+								<div className="col">
+									<div className="row panel-row">
+										<div className="col">
+											<form onSubmit={(event) => this.props.handleTodoSubmit(event, this.state)}>
+												<fieldset>
+													<div className="form-group">
+														<legend><i class="fa fa-plus"></i> Add a Task</legend>
+														<hr />
+														<label HTMLfor="duedate">Due Date:</label>
+														<input className="form-control" rows="1" name="dueDate" value="ex. 04/01/2018" onChange="handleInputChange" />
+														<label HTMLfor="duedate">Title:</label>
+														<input className="form-control" rows="1" name="todoTitle" value="dueDate" onChange="handleInputChange"  />
+														<label HTMLfor="duedate">Description:</label>
+														<input className="form-control" rows="3" name="todoNote" value="dueDate" onChange="handleInputChange" />
+										
+													</div>
+														<button type="submit" className="btn btn-primary" id="existingStudent">Add Task</button>
+												</fieldset>
+											</form>
+										</div>
+									</div>
+								</div>
+
+								<div className="col">
+									<div className="row panel-row">
+										<div className="col">
+											<div className="container" id="todoResults"> 
+											<legend><i class="fa fa-calendar-check-o"></i> Your Open Tasks</legend>
+											<hr />
+
+											{/* <StudentResults /> */}
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>	
 					</div>
-				</div>	
+			
 			<Sidenav />
           <Footer />	
 		</div>

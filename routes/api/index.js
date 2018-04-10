@@ -6,6 +6,7 @@ module.exports = function (passport) {
 	router.use("/notes",require("./notes")(passport));
 	router.use("/reports",require("./reports")(passport));
 	router.use("/advisors",require("./advisors")(passport));
+	router.use("/todo",require("./todo")(passport));
 
 	// router.get("/testroute", function(req, res) {
 	// 	res.send("you got me");

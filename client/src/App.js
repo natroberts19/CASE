@@ -126,7 +126,13 @@ class App extends Component {
         }
         }/>
 
-        
+        {/* <Route exact path="/home/dashboard" render={()=>{
+          if(this.state.auth.isAuthenticated){
+            return <Dashboard />
+          } else {
+            return <Redirect to="/" />
+          }
+        }} /> */}
           <Route exact path="/home/dashboard" component={Dashboard} />
           <Route exact path="/api/students" component={Student} />
           <Route exact path="/api/reports" component={Reports} />

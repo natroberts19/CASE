@@ -23,17 +23,17 @@ var TodoSchema = new Schema({
     todoTitle: {
         type: String,
         trim: true,
-        required: "String is Required"
+        // required: "String is Required"
     },
     todoNote: {
         type: String,
         trim: true,
-        required: "String is Required"
+        // required: "String is Required"
     },
     todoStatus: {
         type: String,
         trim: true,
-        required: "String is Required"
+        // required: "String is Required"
     },
 });
 

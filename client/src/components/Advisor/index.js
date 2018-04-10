@@ -68,15 +68,15 @@ render() {
 						<h5>How is MSGO Calculated?</h5>
 						<hr />
 							<div style={{"fontWeight" : "bold", "color" : "blue"}}> MSGO = Total of students who advance / Total of students assisted </div>
-						<p>The total of students who advance is based on attaining one of the three exit categories listed above. The total of students assisted is based on the total number of active and inactive students advised during the review period.</p>
+						<p>The total of students who advance is based on attaining one of the three exit categories listed above. This data is tracked in CASE using the Result field. You will only track a result when the student advances based on their goal. The total of students assisted is based on the total number of active and inactive students advised during the review period.</p>
 
-						<a href="#" className="btn btn-primary">Your MSGO Details</a>
+						{/* <a href="#" className="btn btn-primary">Your MSGO Details</a> */}
+						<ul>
+							<li>Your MSGO Result Count = {this.state.countmsgoresult}</li>
+							<li>Your Total Students = {this.state.countmyall}</li>
+							<li>Your MSGO percentage = {}</li>
+						</ul>
 					</div>
-					<ul>
-						<li>Your MSGO Result Count = {this.state.countmsgoresult}</li>
-						<li>Your Total Students = {this.state.countmyall}</li>
-						<li>Your MSGO percentage = {}</li>
-					</ul>
 				</div>	
 			<Sidenav />
           <Footer />	
