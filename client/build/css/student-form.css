@@ -1,0 +1,11 @@
+body {
+    font: 400 15px Lato, sans-serif;
+    background-color: gray;
+    line-height: 1.8;
+    color: black;
+}
+
+label {
+    font: 400 20px Lato, sans-serif;
+    font-style: strong;
+}
