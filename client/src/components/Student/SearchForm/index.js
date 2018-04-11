@@ -6,7 +6,8 @@ import axios from "axios";
 class SearchForm extends Component {
 // Set the initial values of all the form fields (this.state.field).
 	state = {
-		search: "",
+        search: "",
+        searchReset: ""
 	};
 
 // Handle changes to the input fields:
@@ -26,7 +27,8 @@ handleSearchSubmit = (event, searchValues) => {
         .then((results)=>{ 
             console.log("get search form results:", results);
             this.setState({
-                student: results.data
+                student: results.data,
+                searchReset: ""
             });
             
         }).catch((err)=>{
@@ -63,7 +65,7 @@ render() {
                         <hr />
 
                             { 
-                                this.state.student ? <StudentResults student={this.state.student}/> : null
+                                this.state.student ? <StudentResults student={this.state.student}/> : <h3> {this.state.message} </h3>
                                 
                             }
                             

@@ -2,18 +2,20 @@
 // Tasks is a page that contains a task builder and list of to-do items for the logged in advisor.
 // ---------------------------------------------------------------------------------------------------------
 
-import React from 'react';
+import React, {Component} from 'react';
 import "./style.css";
 import Navbar from "../Navbar";
 import Sidenav from "../Sidenav";
 import Footer from '../Footer';
 
-const Tasks = (props) =>{
+class Tasks extends Component {
+
+render() {
 	return (
 		<div className="container" style={{"marginLeft":"200px"}}>
 			<Navbar 
-				// username={this.props.auth.username} 
-				// handleLogout={this.props.handleLogout}
+				username={this.props.auth.username} 
+				handleLogout={this.props.handleLogout}
 			/>
 			<h2><i className="fa fa-check-square"></i> Tasks</h2><p />
 				<div class="card">
@@ -68,6 +70,7 @@ const Tasks = (props) =>{
           <Footer />	
 		</div>
 	);
+}
 }
 
 export default Tasks;

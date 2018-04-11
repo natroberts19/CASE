@@ -14,7 +14,8 @@ class Advisor extends Component {
 
 state = {
 	countmyall: [],
-	countmsgoresult: []
+	countmsgoresult: [],
+	msgo: []
 };
 
 componentDidMount() {
