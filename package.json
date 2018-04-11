@@ -20,6 +20,12 @@
     "nodemon": "^1.17.2"
   },
   "dependencies": {
-    "csv-express": "^1.2.2"
+    "csv-express": "^1.2.2",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.0.14",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.0"
   }
 }
