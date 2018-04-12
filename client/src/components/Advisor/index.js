@@ -45,7 +45,7 @@ render() {
 
 	return (
 		
-		<div className="container" style={{"marginLeft":"200px"}}>
+		<div className="container" style={{"marginLeft":"175px"}}>
 			<Navbar 
 				username={this.props.auth.username} 
 				handleLogout={this.props.handleLogout}
@@ -70,13 +70,12 @@ render() {
 						<hr />
 							<div style={{"fontWeight" : "bold", "color" : "blue"}}> MSGO = Total of students who advance / Total of students assisted </div>
 						<p>The total of students who advance is based on attaining one of the three exit categories listed above. This data is tracked in CASE using the Result field. You will only track a result when the student advances based on their goal. The total of students assisted is based on the total number of active and inactive students advised during the review period.</p>
-
-						{/* <a href="#" className="btn btn-primary">Your MSGO Details</a> */}
-						<ul>
-							<li>Your MSGO Result Count = {this.state.countmsgoresult}</li>
-							<li>Your Total Students = {this.state.countmyall}</li>
-							<li>Your MSGO percentage = {}</li>
-						</ul>
+						<p>Following is your current MSGO status:</p>
+						<div className="container" style={{"backgroundColor" : "whitesmoke"}}>
+							<li>MSGO Result Count = {this.state.countmsgoresult}</li>
+							<li>Total Students = {this.state.countmyall}</li>
+							<li><mark>MSGO percentage = {}</mark></li>
+						</div>
 					</div>
 				</div>	
 			<Sidenav />

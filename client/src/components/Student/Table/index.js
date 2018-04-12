@@ -11,7 +11,7 @@ const Table = ({header, tableData}) => {
 		<table className="table table-hover" className="panel-body">
 		<thead>
 			<tr>
-				<th colSpan="3">
+				<th colSpan="2">
 					<h5>{header}</h5>
 				</th>
 			</tr>
@@ -23,7 +23,7 @@ const Table = ({header, tableData}) => {
 			<tr>
 				<td id="tdRowHead">{row.rowheading}</td>
 				<td>{row.data}</td>
-				<td><button className="btn btn-primary btn-sm">Edit</button></td>
+				{/* <td><button className="btn btn-primary btn-sm">Edit</button></td> */}
 			</tr>		
 		))}
 		</tbody>

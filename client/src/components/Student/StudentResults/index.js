@@ -29,9 +29,11 @@ class StudentResults extends Component {
             {rowheading: "Education Level:", data: highLevelEd},
             {rowheading: "Goal:", data: goal},
             {rowheading: "Result:", data: result},
-            {rowheading: "Advisor:", data: advisor},
-            {rowheading: "Notes:", data: notes},
-            {rowheading: "Files:", data: files}
+            {rowheading: "Advisor:", data: advisor}
+        ];
+
+        const note = [
+            {rowheading: "Add a note below:", data: notes}
         ];
 
         return(
@@ -39,8 +41,23 @@ class StudentResults extends Component {
                     <div className="panel-body">
 
                         <Table header="Student" tableData={student} /> 
+                        <p />
                         <Table header="Schedule" tableData={schedules} />
+                        <p />
                         <Table header="Advisement" tableData={advise}/>
+                        <p />
+                        <Table header="Notes" tableData={note} />
+                        
+                        <div className="container" id="noteForm"> 
+                            <form>
+                                <fieldset>
+                                    <div className="form-group">
+                                        <input className="form-control" rows="3" name="studentNote" value='Ex. "Met to discuss upcoming job interview at Disney."' />
+                                    </div>
+                                    <button type="submit" className="btn btn-primary" id="studentNote">Submit</button>
+                                </fieldset>
+                            </form>
+                        </div>
                          
                     </div>
             </div>

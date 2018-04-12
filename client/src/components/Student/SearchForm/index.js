@@ -47,6 +47,7 @@ render() {
                                 <fieldset>
                                     <div className="form-group">
                                         <legend><i class="fa fa-search"></i> Search</legend>
+                                        <hr />
                                         <label HTMLfor="search">Enter 7-digit id:</label>
                                         <input className="form-control" id="searchStudId" rows="1" name="studentId" value={this.state.studentId} onChange={this.handleInputChange} />
                                     </div>
