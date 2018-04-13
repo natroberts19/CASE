@@ -16,7 +16,10 @@ module.exports = {
 
         db.Note
         .create(req.body)
-        .then(dbNote => db.Student.findOneAndUpdate({_id: req.params.id }, { $push: {notes: dbNote._id } }, { new: true }))
+        .then(dbNote => {
+            console.log("create dbNote", dbNote);
+            db.Student.findOneAndUpdate({_id: req.params.id }, { $push: {notes: dbNote._id } }, { new: true })
+        })
         .then(dbStudent => res.json(dbStudent))
         .catch(err => res.status(422).json(err))
     },

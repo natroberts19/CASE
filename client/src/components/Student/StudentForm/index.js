@@ -148,12 +148,6 @@ render() {
                                             {/* <input className="form-control" id="adviseNote" rows="3" placeholder="Enter notes here." name="notes" value={this.state.notes} onChange={this.handleInputChange} /> */}
                                         </div>
 
-                                        {/* <div className="form-group">
-                                            <input type="file" className="form-control-file" id="inputFile" aria-describedby="fileHelp" />
-                                            <small id="fileHelp" className="form-text text-muted">is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.
-                                            </small>
-                                        </div> */}
-
                                         <button type="submit" className="btn btn-primary" id="newStudent">Submit</button>
                                     </fieldset>
                                 </form>

@@ -1,3 +1,5 @@
-mark {
-    background-color: yellow;
+#advisor-card {
+    padding: 10px;
+    text-align: center;
+    width: 300px;
 }

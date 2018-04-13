@@ -1,17 +1,51 @@
 // -----------------------------------------------------------------------------------------------------------
 // StudentResults is the component to hold the results Table from the StudentForm and SearchForm.
 // This component imports into the Student page.
-// *I now want it to import into Student Form and Search Form *
 // -----------------------------------------------------------------------------------------------------------
 
 import React, { Component } from 'react';
 import "./style.css";
-import Table from "../Table"
+import Table from "../Table";
+import axios from "axios";
+import Notes from "../Notes"
 
 class StudentResults extends Component {
 
+state = {
+    note: "",
+    notes: []
+};
+
+// Handle changes to the note input field.
+handleInputChange = event => {
+	const { name, value } = event.target;
+	this.setState({
+		[name]: value
+	});
+};
+
+// Handles the note submit.
+handleNoteSubmit = (event, studentId, note) => {
+    event.preventDefault();
+    console.log("note form value:", note);
+    console.log("note student value:", studentId);
+    const newNote = {
+        note
+    }
+    axios.post(`/api/notes/${studentId}`, newNote)
+        .then((results)=>{ 
+            console.log("post note results:", results);
+            this.setState({
+                notes: results.data
+            });
+            
+        }).catch((err)=>{
+            console.log(err);
+        });    
+    }
+
     render() {
-        const {studentId, firstName, lastName, phone, email, program, schedule, campus, studentStatus, highLevelEd, goal, result, advisor, notes, files} = this.props.student;
+        const {studentId, firstName, lastName, phone, email, program, schedule, campus, studentStatus, highLevelEd, goal, result, advisor, notes} = this.props.student;
         const student = [
             {rowheading: "Student Id:", data: studentId},
             {rowheading: "First Name:", data: firstName},
@@ -33,7 +67,7 @@ class StudentResults extends Component {
         ];
 
         const note = [
-            {rowheading: "Add a note below:", data: notes}
+            {rowheading: "Review and Add Notes:", data: notes}
         ];
 
         return(
@@ -47,18 +81,21 @@ class StudentResults extends Component {
                         <Table header="Advisement" tableData={advise}/>
                         <p />
                         <Table header="Notes" tableData={note} />
+                        <Notes notes={this.state.notes} />
                         
+                        
+
                         <div className="container" id="noteForm"> 
-                            <form>
+                            <form onSubmit={(event) => this.handleNoteSubmit(event, this.props.student._id, this.state.note)}>
                                 <fieldset>
                                     <div className="form-group">
-                                        <input className="form-control" rows="3" name="studentNote" value='Ex. "Met to discuss upcoming job interview at Disney."' />
+                                        <input className="form-control" rows="3" name="note" value={this.state.note} onChange={this.handleInputChange} />
                                     </div>
-                                    <button type="submit" className="btn btn-primary" id="studentNote">Submit</button>
+                                    <button type="submit" className="btn btn-primary">Submit</button>
                                 </fieldset>
                             </form>
-                        </div>
-                         
+                        </div>  
+
                     </div>
             </div>
         );
