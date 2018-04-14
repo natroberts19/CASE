@@ -5,9 +5,11 @@
 
 import React from 'react';
 import "./style.css";
+// import Notes from "../Notes";
 
 const Table = ({header, tableData}) => {
 	return(
+	<div className = "container">
 		<table className="table table-hover" className="panel-body">
 		<thead>
 			<tr>
@@ -28,6 +30,9 @@ const Table = ({header, tableData}) => {
 		))}
 		</tbody>
 	</table> 
+
+	{/* <Notes /> */}
+	</div>
 	)
 }
 

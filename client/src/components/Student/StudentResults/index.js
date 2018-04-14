@@ -45,7 +45,7 @@ handleNoteSubmit = (event, studentId, note) => {
     }
 
     render() {
-        const {studentId, firstName, lastName, phone, email, program, schedule, campus, studentStatus, highLevelEd, goal, result, advisor, notes} = this.props.student;
+        const {studentId, firstName, lastName, phone, email, program, schedule, campus, studentStatus, highLevelEd, goal, result, advisor, note} = this.props.student;
         const student = [
             {rowheading: "Student Id:", data: studentId},
             {rowheading: "First Name:", data: firstName},
@@ -66,9 +66,9 @@ handleNoteSubmit = (event, studentId, note) => {
             {rowheading: "Advisor:", data: advisor}
         ];
 
-        const note = [
-            {rowheading: "Review and Add Notes:", data: note}
-        ];
+        // const notes = [
+        //     {rowheading: "Review and Add Notes:", data: note}
+        // ];
 
         return(
             <div className="container" id="studentResults">
@@ -80,7 +80,7 @@ handleNoteSubmit = (event, studentId, note) => {
                         <p />
                         <Table header="Advisement" tableData={advise}/>
                         <p />
-                        <Table header="Notes" tableData={note} />
+                        {/* <Table header="Notes" tableData={note} /> */}
                         
                         <div className="container" id="noteForm"> 
                             <form onSubmit={(event) => this.handleNoteSubmit(event, this.props.student._id, this.state.note)}>

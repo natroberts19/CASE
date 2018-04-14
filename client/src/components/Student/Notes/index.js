@@ -8,13 +8,13 @@ import "./style.css";
 const Notes = ({notes}) => {
 
 	return(
-		<div className="card" id="note-card">
+		<div className="container">
 			{notes.length ? (
-				<list>
+				<div>
 					{notes.map(note => (
 						<li key={note._id}> {note.notes}</li>
 					))}
-				</list>
+				</div>
 			) : (
 				<div>No notes exist yet! Add your first note using the form above.</div>
 			)}
