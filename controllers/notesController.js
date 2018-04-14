@@ -19,20 +19,21 @@ module.exports = {
         .then(dbNote => {
             console.log("create dbNote", dbNote);
             db.Student.findOneAndUpdate({_id: req.params.id }, { $push: {notes: dbNote._id } }, { new: true })
+            .then(dbStudent => res.json(dbStudent))
+            .catch(err => res.status(422).json(err))
         })
-        .then(dbStudent => res.json(dbStudent))
-        .catch(err => res.status(422).json(err))
+        
     },
 
 // GET route to see all the notes for one student.
-    getNote: function(req, res) {
-        console.log("This is the notes controller getNote.")
+    getNote: ("/populateuser", function(req, res) {
+        console.log("This is getNotes for one student.")
 
-        db.Note
-        .find()
+        db.Student
+        .findOne({firstName: "Helga"})
         .populate("notes")
         .then(dbStudent => res.json(dbStudent))
         .catch(err => res.status(422).json(err))
-    }
+    })
 
 }

@@ -49,22 +49,6 @@ class Student extends Component {
             });
     }
 
-    // Handle the edit button submit. Change student values.
-        // handleEditSubmit = (event, editValues) => {
-        //     console.log(editValues);
-        //     event.preventDefault();
-            
-        //     axios.post("/api/students/:id", editValues)
-        //         .then((results)=>{ 
-        //             console.log("edit button results:", results);
-        //             this.setState({
-        //                 student: results.data
-        //             });
-                    
-        //         }).catch((err)=>{
-        //             console.log(err);
-        //         });
-        // }
 
 render() {
     return(
@@ -85,19 +69,6 @@ render() {
                     {this.renderPage()}
                     
                 </div>
-                
-                {/* <SearchForm
-                    handleSearchSubmit={this.handleSearchSubmit}
-                    handleInputChange={this.handleInputChange}
-                /><p />
-                <StudentForm
-                    handleFormSubmit={this.handleFormSubmit}
-                    handleInputChange={this.handleInputChange}
-                /><p />
-                <StudentResults
-                    student={this.state.student}
-                    handleEditSubmit={this.handleEditSubmit}
-                /> */}
 
             <Sidenav />
           <Footer />

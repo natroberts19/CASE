@@ -36,7 +36,7 @@ handleNoteSubmit = (event, studentId, note) => {
         .then((results)=>{ 
             console.log("post note results:", results);
             this.setState({
-                notes: results.data
+                notes: results.data.notes
             });
             
         }).catch((err)=>{
@@ -67,7 +67,7 @@ handleNoteSubmit = (event, studentId, note) => {
         ];
 
         const note = [
-            {rowheading: "Review and Add Notes:", data: notes}
+            {rowheading: "Review and Add Notes:", data: note}
         ];
 
         return(
@@ -81,10 +81,7 @@ handleNoteSubmit = (event, studentId, note) => {
                         <Table header="Advisement" tableData={advise}/>
                         <p />
                         <Table header="Notes" tableData={note} />
-                        <Notes notes={this.state.notes} />
                         
-                        
-
                         <div className="container" id="noteForm"> 
                             <form onSubmit={(event) => this.handleNoteSubmit(event, this.props.student._id, this.state.note)}>
                                 <fieldset>
@@ -95,6 +92,9 @@ handleNoteSubmit = (event, studentId, note) => {
                                 </fieldset>
                             </form>
                         </div>  
+                        <p />
+
+                        <Notes notes={this.state.notes} />
 
                     </div>
             </div>

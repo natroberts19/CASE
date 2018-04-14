@@ -10,13 +10,13 @@ const Notes = ({notes}) => {
 	return(
 		<div className="card" id="note-card">
 			{notes.length ? (
-				<div id="change-font">
+				<list>
 					{notes.map(note => (
 						<li key={note._id}> {note.notes}</li>
 					))}
-				</div>
+				</list>
 			) : (
-				<div>No notes exist yet! Add your first note below.</div>
+				<div>No notes exist yet! Add your first note using the form above.</div>
 			)}
 		</div>
 	
