@@ -37,9 +37,9 @@ render() {
 														<label HTMLfor="duedate">Due Date:</label>
 														<input className="form-control" rows="1" name="dueDate" value="ex. 04/01/2018" onChange="handleInputChange" />
 														<label HTMLfor="duedate">Title:</label>
-														<input className="form-control" rows="1" name="todoTitle" value="dueDate" onChange="handleInputChange"  />
+														<input className="form-control" rows="1" name="todoTitle" value="taskTitle" onChange="handleInputChange"  />
 														<label HTMLfor="duedate">Description:</label>
-														<input className="form-control" rows="3" name="todoNote" value="dueDate" onChange="handleInputChange" />
+														<input className="form-control" rows="3" name="todoNote" value="taskDescription" onChange="handleInputChange" />
 										
 													</div>
 														<button type="submit" className="btn btn-primary" id="existingStudent">Add Task</button>
@@ -56,7 +56,7 @@ render() {
 											<legend><i class="fa fa-calendar-check-o"></i> Your Open Tasks</legend>
 											<hr />
 
-											{/* <StudentResults /> */}
+											
 
 											</div>
 										</div>

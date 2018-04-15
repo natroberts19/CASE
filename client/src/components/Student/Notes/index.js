@@ -16,7 +16,7 @@ const Notes = ({notes}) => {
 					))}
 				</div>
 			) : (
-				<div>No notes exist yet! Add your first note using the form above.</div>
+				<div>No notes exist yet!</div>
 			)}
 		</div>
 	

@@ -26,14 +26,13 @@ module.exports = {
     },
 
 // GET route to see all the notes for one student.
-    getNote: ("/populateuser", function(req, res) {
+    getNote: ("/populateuser/:noteId", function(req, res) {
         console.log("This is getNotes for one student.")
 
         db.Student
-        .findOne({firstName: "Helga"})
+        .findOne({})
         .populate("notes")
         .then(dbStudent => res.json(dbStudent))
-        .catch(err => res.status(422).json(err))
+        .catch(err => res.status(422).json(err));
     })
-
 }

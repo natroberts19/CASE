@@ -42,6 +42,21 @@ handleNoteSubmit = (event, studentId, note) => {
         }).catch((err)=>{
             console.log(err);
         });    
+
+        this.setState({
+            note: ""
+        });
+
+    axios.get(`/api/students/populateuser/${newNote}`)
+        .then((results) => {
+            console.log("get note results:", results);
+            this.setState({
+                note: note.notes,
+            });
+
+        }).catch((err) => {
+            console.log(err);
+        });
     }
 
     render() {
@@ -83,6 +98,7 @@ handleNoteSubmit = (event, studentId, note) => {
                         {/* <Table header="Notes" tableData={note} /> */}
                         
                         <div className="container" id="noteForm"> 
+                            <h6> Add a note for this student:</h6>
                             <form onSubmit={(event) => this.handleNoteSubmit(event, this.props.student._id, this.state.note)}>
                                 <fieldset>
                                     <div className="form-group">

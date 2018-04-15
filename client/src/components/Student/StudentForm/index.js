@@ -44,6 +44,22 @@ class StudentForm extends Component {
         }).catch((err)=>{
             console.log(err);
         });    
+
+        this.setState({
+            studentId: "",
+            firstName: "",
+            lastName: "",
+            phone: "",
+            email: "",
+            program: "",
+            schedule: "",
+            campus: "",
+            studentStatus: "",
+            highLevelEd: "",
+            goal: "",
+            result: "",
+            advisor: ""
+        });
     }
 
 render() {

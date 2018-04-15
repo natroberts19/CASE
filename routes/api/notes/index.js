@@ -8,10 +8,10 @@ module.exports = function (passport) {
 
     const notesController = require("../../../controllers/notesController");
     
-    // Matches with "/api/notes
+    // Matches with "/api/notes"
     router.route("/:id")
       .post(notesController.postNote)
-    router.route("/populateuser")
+    router.route("/populateuser/:note")
       .get(notesController.getNote)
     
     module.exports = router;

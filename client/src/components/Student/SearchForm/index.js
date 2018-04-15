@@ -28,11 +28,14 @@ class SearchForm extends Component {
                 console.log("get search form results:", results);
                 this.setState({
                     student: results.data,
-                    searchReset: ""
                 });
 
             }).catch((err) => {
                 console.log(err);
+            });
+
+            this.setState({
+                studentId: ""
             });
     }
 
