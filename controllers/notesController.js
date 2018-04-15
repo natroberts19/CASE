@@ -23,16 +23,16 @@ module.exports = {
             .catch(err => res.status(422).json(err))
         })
         
-    },
+    }
 
 // GET route to see all the notes for one student.
-    getNote: ("/populateuser/:noteId", function(req, res) {
-        console.log("This is getNotes for one student.")
+    // getNote: ("/populateuser/:noteId", function(req, res) {
+    //     console.log("This is getNotes for one student.")
 
-        db.Student
-        .findOne({})
-        .populate("notes")
-        .then(dbStudent => res.json(dbStudent))
-        .catch(err => res.status(422).json(err));
-    })
+    //     db.Student
+    //     .findOne({})
+    //     .populate("notes")
+    //     .then(dbStudent => res.json(dbStudent))
+    //     .catch(err => res.status(422).json(err));
+    // })
 }

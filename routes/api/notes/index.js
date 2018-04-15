@@ -11,8 +11,8 @@ module.exports = function (passport) {
     // Matches with "/api/notes"
     router.route("/:id")
       .post(notesController.postNote)
-    router.route("/populateuser/:note")
-      .get(notesController.getNote)
+    // router.route("/populateuser/:note")
+    //   .get(notesController.getNote)
     
     module.exports = router;
 

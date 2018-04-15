@@ -8,7 +8,7 @@ export default {
     
     // GET all notes for a student.
     getNotesByStudent: function() {
-        return axios.get("/api/notes/populateuser", )
+        return axios.get("api/students/search/", )
     }
     
 };

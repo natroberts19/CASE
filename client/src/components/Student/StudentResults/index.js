@@ -7,7 +7,8 @@ import React, { Component } from 'react';
 import "./style.css";
 import Table from "../Table";
 import axios from "axios";
-import Notes from "../Notes"
+// import Notes from "../Notes"
+import NotesAPI from "../../../utils/NotesAPI"
 
 class StudentResults extends Component {
 
@@ -15,6 +16,20 @@ state = {
     note: "",
     notes: []
 };
+
+// componentDidMount() {
+//     this.loadNotesByStudent();
+// }
+
+// This should load all notes for this student.
+// loadNotesByStudent = () => {
+//     console.log("load notes for student");
+//     NotesAPI.getNotesByStudent()
+//     .then(res =>
+//         this.setState({ notes: res.data.notes })
+//     )
+//     .catch(err => console.log(err));
+// }
 
 // Handle changes to the note input field.
 handleInputChange = event => {
@@ -45,17 +60,6 @@ handleNoteSubmit = (event, studentId, note) => {
 
         this.setState({
             note: ""
-        });
-
-    axios.get(`/api/students/populateuser/${newNote}`)
-        .then((results) => {
-            console.log("get note results:", results);
-            this.setState({
-                note: note.notes,
-            });
-
-        }).catch((err) => {
-            console.log(err);
         });
     }
 
@@ -110,8 +114,17 @@ handleNoteSubmit = (event, studentId, note) => {
                         </div>  
                         <p />
 
-                        <Notes notes={this.state.notes} />
-
+                        <div className="container">
+                            {this.state.notes.length ? (
+                                <div>
+                                    {this.state.notes.map(note => (
+                                        <li key={note._id}> {note}</li>
+                                    ))}
+                                </div>
+                            ) : (
+                                <div>No notes exist yet!</div>
+                            )}
+		                </div>
                     </div>
             </div>
         );

@@ -57,12 +57,13 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
 
-// GET query to find student by 7-digit id.
+// GET query to find student by 7-digit id and populate notes. THIS IS WORKING!
     findBySearch: function(req, res) {
         console.log("this is find by 7-digit id", req.params.searchId);
         // const query = "";
         db.Student
         .findOne({studentId: req.params.searchId})
+        .populate("notes")
         .then(dbModel => {
             console.log("find by search", dbModel);
             // if dbModel is null, send res.json "no students found..., etc" otherwise send back the student.

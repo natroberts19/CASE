@@ -12,7 +12,7 @@ const Notes = ({notes}) => {
 			{notes.length ? (
 				<div>
 					{notes.map(note => (
-						<li key={note._id}> {note.notes}</li>
+						<li key={note._id}> {note}</li>
 					))}
 				</div>
 			) : (
