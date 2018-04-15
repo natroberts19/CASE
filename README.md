@@ -16,29 +16,42 @@ Adult Learning Center Osceola (ALCO) serves adult students who are seeking assis
 
 **Solutions:**
 
-The CASE application aims to solve these problems by...
+The CASE application aims to solve these problems by providing a user-friendly platform for advisors to add, update, and view key student data. The CASE application provides five page views for advisors all easily accessible from a side navigation menu.
+
+***Pages***
+
+* Dashboard - Landing page upon log-in. Provides a quick view of key data points and will hold a messaging "alert" section in the Jumbotron area.
+* Student - Page that allows the advisor to search for a student or add new students into the database.
+* Reports - Provides the user with key report views of student data.
+* Tasks - Advisors will be able to add "to-do" items related to student advisement sessions.
+* Advisor - This page provides a summary of the advisor's MSGO status and information about how the figure is calculated.
 
 ## Technologies
 
-* React UI with Bootstrap 4 to create dynamic page views.
+* React UI with Bootstrap 4 elements to create dynamic page views.
 * Authentication with Passport.
 * Node and Express web server.
 * MongoDB to store persistent report data.
 * Mongoose to query, post and update data.
 
-(New technology) AWS S3 for file uploading and storage.
-(New technology) Mongoose CSV Export npm to export report tables to .csv format.
-
 ## Version 1.0 Release, April 17, 2018
-* Includes...
+
+* Posting of new student data.
+* Posting of notes to sudents.
+* Advisor report views of students.
+* Dashboard real-time, snapshot statistics.
+* Advisor real-time calculation of MSGO status.
 
 ## Future Releases
 
-* Three-tiered access (support staff [view-only], advisor, and admin).
+* Three-tiered access (support staff, advisor, and admin).
+* AWS S3 for file uploading and storage.
+* Mongoose CSV Export npm to export report tables to .csv format.
+* Front end edit capability to update student status and result.
 * To-do tasks linked to specific students.
-* Customer alert messaging on the Dashboard.
+* Advisor alert messaging on the Dashboard.
 * Enhanced advisor reporting.
 * Messaging to students.
 
 ## Application Link
-[heroku link here.]
+[https://safe-sands-81459.herokuapp.com/]
