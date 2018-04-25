@@ -8,7 +8,7 @@ import "./style.css";
 const Jumbotron = (props) => {
 	return(
 		
-		<div className="jumbotron">
+		<div className="jumbotron" style={{"marginLeft":"10px"}}>
 				<h2 className="display-3"><i className="fa fa-puzzle-piece"></i>  Welcome to CASE!</h2>
 					<p className="lead">Career Advisor Solution for Educators (CASE) is a case management application that will allow you to manage your student portfolio. Use CASE to create students, update student profiles, view reports, and track student progress. </p>
 					<p className="lead"> No more spreadsheets and file folders!</p>

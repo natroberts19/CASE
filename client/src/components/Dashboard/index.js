@@ -11,8 +11,9 @@ import Sidenav from "../Sidenav";
 import Footer from '../Footer';
 import Jumbotron from "./Jumbotron";
 import Card from "./Card";
-import AdvisorsAPI from "../../utils/AdvisorsAPI"
-import StudentsAPI from "../../utils/StudentsAPI"
+import AdvisorsAPI from "../../utils/AdvisorsAPI";
+import StudentsAPI from "../../utils/StudentsAPI";
+import PieChart from 'react-minimal-pie-chart';
 
 class Dashboard extends Component {
 
@@ -112,7 +113,7 @@ class Dashboard extends Component {
 
 render() {
 	return (
-		<div className="container" style={{"marginLeft":"175px"}}>
+		<div className="container" style={{"marginLeft":"165px"}}>
 			<Navbar 
 				username={this.props.auth.username} 
 				handleLogout={this.props.handleLogout}
@@ -177,10 +178,64 @@ render() {
 							label3="Diana:  "
 							list3={this.state.countdiana}
 						/>
+						<br />
 						</div>
 					</div>
 				</div>
+				{/* Ends the row of cards. */}
 			</div>	
+
+			<div className="row">
+				<div className="col">
+					<div className="row panel-row">
+						<div className="col">
+						<PieChart
+							data={[
+								{ value: 9, key: 1, color: '#02B875' },
+								{ value: 15, key: 2, color: '#DCDCDC' },
+								{ value: 8, key: 3, color: '#4582EC' },
+							]}
+							style={{ "height" : "200px" }}
+						/>
+						
+						</div>
+					</div>
+				</div>
+
+				<div className="col">
+					<div className="row panel-row">
+						<div className="col">
+						<PieChart
+							data={[
+								{ value: 9, key: 1, color: '#02B875' },
+								{ value: 5, key: 2, color: '#DCDCDC' },
+								{ value: 14, key: 3, color: '#4582EC' },
+							]}
+							style={{ "height" : "200px" }}
+						/>
+						
+						</div>
+					</div>
+				</div>
+
+				<div className="col">
+					<div className="row panel-row">
+						<div className="col">
+						<PieChart
+							data={[
+								{ value: 9, key: 1, color: '#02B875' },
+								{ value: 6, key: 2, color: '#DCDCDC' },
+								{ value: 8, key: 3, color: '#4582EC' },
+							]}
+							style={{ "height" : "200px" }}
+						/>
+						<br />
+						
+						</div>
+					</div>
+				</div>
+				{/* Ends second row of charts. */}
+			</div>
 			<Sidenav />
           <Footer />	
 		</div>

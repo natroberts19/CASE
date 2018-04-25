@@ -44,7 +44,7 @@ class Reports extends Component {
 
   render() {
     return (
-      <div className="container" style={{"marginLeft":"175px"}}>
+      <div className="container" style={{"marginLeft":"165px"}}>
           <Navbar 
             username={this.props.auth.username} 
             handleLogout={this.props.handleLogout}

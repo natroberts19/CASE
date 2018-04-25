@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------------------------
 // Advisor is a page that contains a card section with an informational description of MSGO and 
-// details of advisor MSGO status.
+// calculation details of advisor MSGO status.
 // ---------------------------------------------------------------------------------------------------------
 
 import React, { Component } from 'react';
@@ -9,6 +9,8 @@ import Navbar from "../Navbar";
 import Sidenav from "../Sidenav";
 import Footer from '../Footer';
 import AdvisorsAPI from '../../utils/AdvisorsAPI';
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
 
 class Advisor extends Component {
 
@@ -41,23 +43,27 @@ class Advisor extends Component {
 			.catch(err => console.log(err));
 	}
 
-
 	render() {
 
 		let percent;
+		let goal = parseInt(40, 10);
+		let progress;
 		const result = parseInt(this.state.countmsgoresult, 10);
 		const all = parseInt(this.state.countmyall, 10);
 		if (all !== 0) {
 
 			percent = ((result / all) * 100).toFixed(2);
+			progress = ((percent / goal) * 100);
+			console.log("progress: ", progress);
 		} else {
 			percent = "0"
 		}
 		percent = percent + "%";
+		
 
 		return (
 
-			<div className="container" style={{ "marginLeft": "175px" }}>
+			<div className="container" style={{ "marginLeft": "165px" }}>
 				<Navbar
 					username={this.props.auth.username}
 					handleLogout={this.props.handleLogout}
@@ -65,10 +71,10 @@ class Advisor extends Component {
 				<h2><i className="fa fa-user-plus"></i> Advisor</h2><p />
 				<div className="card">
 					<div className="card-header">
-						Featured
+						Measurable Student Growth Outcome (MSGO)
 					</div>
 					<div className="card-body">
-						<h5 className="card-title">Understanding the Measurable Student Growth Outcome (MSGO)</h5>
+						<h5 className="card-title">Understanding MSGO</h5>
 						<hr />
 						<p className="card-text">Part of an advisor's annual evaluation is based on a criterion known as Measurable Student Growth Outcome (MSGO). A successful MSGO is based on whether adult students that we advise advance in their education or career goals. A target percentage is established at the beginning of the evaluation period.</p>
 						<p>There are three categories of successful advancement or "exit" that qualify:
@@ -88,6 +94,10 @@ class Advisor extends Component {
 							Total Students Assisted = {this.state.countmyall}
 							<hr />
 							MSGO Percentage = {percent}
+							<Progress 
+							status= "success"
+							percent={progress}
+							/>
 						</div>
 					</div>
 				</div>

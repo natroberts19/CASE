@@ -4,7 +4,7 @@ import "./style.css";
 const Card = (props) => {
 	return(
 
-			<div className="card border-primary mb-3" id="card">
+			<div className="card border-primary mb-3" id="card" style={{"marginLeft":"10px"}}> 
   				<div className="card-header"><i className={props.icon}></i> {props.cardHeader} </div>
  				 	<div className="card-body">
    						 <h4 className="card-title"> {props.cardTitle} </h4>

@@ -22,14 +22,14 @@ state = {
 // }
 
 // This should load all notes for this student.
-// loadNotesByStudent = () => {
-//     console.log("load notes for student");
-//     NotesAPI.getNotesByStudent()
-//     .then(res =>
-//         this.setState({ notes: res.data.notes })
-//     )
-//     .catch(err => console.log(err));
-// }
+    loadNotesByStudent = () => {
+        console.log("load notes for student");
+        NotesAPI.getNotesByStudent()
+        .then(res =>
+            this.setState({ notes: res.data.notes })
+        )
+        .catch(err => console.log(err));
+    }
 
 // Handle changes to the note input field.
 handleInputChange = event => {
@@ -118,7 +118,7 @@ handleNoteSubmit = (event, studentId, note) => {
                             {this.state.notes.length ? (
                                 <div>
                                     {this.state.notes.map(note => (
-                                        <li key={note._id}> {note}</li>
+                                        <li key={note}> {note}</li>
                                     ))}
                                 </div>
                             ) : (

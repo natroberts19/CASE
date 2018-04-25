@@ -26,8 +26,10 @@ class SearchForm extends Component {
         axios.get(`/api/students/search/${searchValues.studentId}`)
             .then((results) => {
                 console.log("get search form results:", results);
+                console.log("get note results:", results.data.notes);
                 this.setState({
                     student: results.data,
+                    notes: results.data.notes
                 });
 
             }).catch((err) => {
@@ -68,7 +70,7 @@ class SearchForm extends Component {
                         <hr />
 
                         {
-                            this.state.student ? <StudentResults student={this.state.student} /> : <h3> {this.state.message} </h3>
+                            this.state.student ? <StudentResults student={this.state.student} notes={this.state.notes}/> : <h3> {this.state.message} </h3>
 
                         }
 
