@@ -23,7 +23,7 @@ const Table = ({header, tableData}) => {
 			
 		{tableData.map(row => (
 			<tr>
-				<td id="tdRowHead">{row.rowheading}</td>
+				<td key={row._id} id="tdRowHead">{row.rowheading}</td>
 				<td>{row.data}</td>
 				{/* <td><button className="btn btn-primary btn-sm">Edit</button></td> */}
 			</tr>		

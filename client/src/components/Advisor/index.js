@@ -95,8 +95,8 @@ class Advisor extends Component {
 							<hr />
 							MSGO Percentage = {percent}
 							<Progress 
-							status= "success"
-							percent={progress}
+								status= "success"
+								percent={progress}
 							/>
 						</div>
 					</div>

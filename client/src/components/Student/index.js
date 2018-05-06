@@ -7,15 +7,18 @@ import React, { Component } from 'react';
 import StudentTabs from "./StudentTabs";
 import StudentForm from "./StudentForm";
 import SearchForm from "./SearchForm";
+// import StudentResults from './StudentResults';
+// import SearchForm2 from "./SearchForm2";
+// import SearchResults from "./SearchResults";
 import Sidenav from "../Sidenav";
 import Navbar from "../Navbar";
 import Footer from '../Footer';
 import axios from 'axios';
-// import StudentResults from './StudentResults';
 
 class Student extends Component {
     // Set the initial value of the tabs and values of all the form fields.
     state = {
+        search: "",
         student: {},
         currentPage: "SearchForm"
     };
@@ -39,7 +42,7 @@ class Student extends Component {
         
         axios.get(`/api/students/search/${searchValues.studentId}`)
             .then((results)=>{ 
-                console.log("get search form results:", results);
+                console.log("Student get search form results: ", results);
                 this.setState({
                     student: results.data
                 });
@@ -69,6 +72,9 @@ render() {
                     {this.renderPage()}
                     
                 </div>
+            <p />
+            {/* <SearchForm /> */}
+            {/* <StudentResults /> */}
 
             <Sidenav />
           <Footer />

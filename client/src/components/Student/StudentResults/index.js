@@ -23,33 +23,36 @@ state = {
 
 // This should load all notes for this student.
     loadNotesByStudent = () => {
-        console.log("load notes for student");
+        console.log("StudentResults load notes for student.");
         NotesAPI.getNotesByStudent()
         .then(res =>
-            this.setState({ notes: res.data.notes })
+            
+            this.setState({ notes: res.data })          
+            
         )
         .catch(err => console.log(err));
     }
 
 // Handle changes to the note input field.
-handleInputChange = event => {
-	const { name, value } = event.target;
-	this.setState({
-		[name]: value
-	});
-};
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
 
 // Handles the note submit.
 handleNoteSubmit = (event, studentId, note) => {
     event.preventDefault();
-    console.log("note form value:", note);
-    console.log("note student value:", studentId);
+    console.log("StudentResults note form value:", note);
+    console.log("StudentResults note student value:", studentId);
     const newNote = {
         note
     }
     axios.post(`/api/notes/${studentId}`, newNote)
         .then((results)=>{ 
-            console.log("post note results:", results);
+            console.log("StudentResults post newNote results:", newNote);
+            console.log("StudentResults notes array:", results.data.notes);
             this.setState({
                 notes: results.data.notes
             });
@@ -86,7 +89,7 @@ handleNoteSubmit = (event, studentId, note) => {
         ];
 
         // const notes = [
-        //     {rowheading: "Review and Add Notes:", data: note}
+        //     {data: note}
         // ];
 
         return(
@@ -115,6 +118,7 @@ handleNoteSubmit = (event, studentId, note) => {
                         <p />
 
                         <div className="container">
+                        
                             {this.state.notes.length ? (
                                 <div>
                                     {this.state.notes.map(note => (
@@ -125,6 +129,7 @@ handleNoteSubmit = (event, studentId, note) => {
                                 <div>No notes exist yet!</div>
                             )}
 		                </div>
+                        
                     </div>
             </div>
         );

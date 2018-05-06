@@ -4,10 +4,9 @@ import StudentResults from "../StudentResults";
 import axios from "axios";
 
 class SearchForm extends Component {
-    // Set the initial values of all the form fields (this.state.field).
     state = {
         search: "",
-        searchReset: ""
+        // message: "Student Id does not exist, try again!"
     };
 
     // Handle changes to the input fields:
@@ -20,13 +19,14 @@ class SearchForm extends Component {
 
     // Handle the search form submit. Get student values. * Need Error handling *
     handleSearchSubmit = (event, searchValues) => {
-        console.log(searchValues.studentId);
+        console.log("SearchForm handleSearchSubmit studentId: ", searchValues.studentId);
+        console.log("SearchForm handleSearchSubmit note: ", searchValues.notes);
         event.preventDefault();
 
         axios.get(`/api/students/search/${searchValues.studentId}`)
             .then((results) => {
-                console.log("get search form results:", results);
-                console.log("get note results:", results.data.notes);
+                console.log("SearchForm get search results: ", results);
+                console.log("SearchForm get note results: ", results.data.notes);
                 this.setState({
                     student: results.data,
                     notes: results.data.notes
@@ -70,7 +70,10 @@ class SearchForm extends Component {
                         <hr />
 
                         {
-                            this.state.student ? <StudentResults student={this.state.student} notes={this.state.notes}/> : <h3> {this.state.message} </h3>
+                            this.state.student ? <StudentResults 
+                                                    student={this.state.student} 
+                                                    notes={this.state.notes}/> 
+                                                : <h3> {this.state.message} </h3>
 
                         }
 
