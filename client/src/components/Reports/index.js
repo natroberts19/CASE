@@ -4,7 +4,7 @@
 // ---------------------------------------------------------------------------------------------------------
 
 import React, { Component } from "react";
-import ReportsAPI from "../../utils/ReportsAPI";
+// import ReportsAPI from "../../utils/ReportsAPI";
 import ReportTabs from "./ReportTabs";
 import MyActiveReport from "./MyActiveReport";
 import MyInactiveReport from "./MyInactiveReport";
@@ -21,13 +21,6 @@ class Reports extends Component {
 
   handlePageChange = page => {
     this.setState({ currentPage: page });
-  };
-
-  // GET to load all CASE students.
-  loadAll = () => {
-    ReportsAPI.getAllReport()
-      .then(res => this.setState({ students: res.data }))
-      .catch(err => console.log(err));
   };
 
   renderPage = () => {
@@ -53,12 +46,12 @@ class Reports extends Component {
           <h2><i className="fa fa-line-chart"></i> Reports</h2><p />
           <div className="container">
           
-            <ReportTabs
-              currentPage={this.state.currentPage}
-              handlePageChange={this.handlePageChange}
-            />
-            <p />
-            {this.renderPage()}
+          <ReportTabs
+            currentPage={this.state.currentPage}
+            handlePageChange={this.handlePageChange}
+          />
+          <p />
+          {this.renderPage()}
 
           </div>
           <Sidenav />

@@ -24,7 +24,7 @@ module.exports = {
     }
 
 // GET route to see all the notes for one student.
-    // getNote: ("/populateuser/:noteId", function(req, res) {
+    // getNotes: function(req, res) {
     //     console.log("This is getNotes for one student.")
 
     //     db.Student
@@ -32,5 +32,5 @@ module.exports = {
     //     .populate("notes")
     //     .then(dbStudent => res.json(dbStudent))
     //     .catch(err => res.status(422).json(err));
-    // })
+    // }
 }

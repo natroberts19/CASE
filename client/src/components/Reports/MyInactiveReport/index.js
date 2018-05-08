@@ -17,7 +17,7 @@ class MyInactiveReport extends Component {
 	}
 
 	loadMyInactiveReport = () => {
-		console.log("load my active report");
+		console.log("Load MyInactiveReport.");
 		ReportsAPI.getMyInactiveReport()
 		.then(res =>
 			this.setState({ students: res.data })
@@ -29,7 +29,7 @@ class MyInactiveReport extends Component {
 		return(
 		<div>
 			<h5>My Inactive Students</h5>
-			<h7><a href="#">Export to CSV</a></h7>
+			<h6>Export to CSV</h6>
 				<table className="table table-hover" id="results">
 					<thead>
 						<tr className="table-success" style={{'color' : 'black'}}>

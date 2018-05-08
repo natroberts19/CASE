@@ -18,7 +18,8 @@ class StudentForm extends Component {
         highLevelEd: "",
         goal: "",
         result: "",
-        advisor: ""
+        advisor: "",
+        notes: []
     };
 
     // Handle changes to the input fields:
@@ -31,12 +32,12 @@ class StudentForm extends Component {
 
    // Handle the new student form submit. Post student values.
    handleFormSubmit = (event, formValues) => {
-    console.log(formValues);
+    console.log("New student handleFormSubmit formValues: ", formValues);
     event.preventDefault();
     
     axios.post("/api/students", formValues)
         .then((results)=>{ 
-            console.log("post new student results:", results);
+            console.log("Post new student results: ", results);
             this.setState({
                 student: results.data
             });
@@ -58,7 +59,8 @@ class StudentForm extends Component {
             highLevelEd: "",
             goal: "",
             result: "",
-            advisor: ""
+            advisor: "",
+            notes: []
         });
     }
 
@@ -75,29 +77,29 @@ render() {
                                             <legend><i class="fa fa-plus"></i> Add New</legend>
                                             <hr />
                                             <h6>Student</h6>
-                                            <label HTMLfor="demographics">7-digit Id:</label>
+                                            <label htmlFor="demographics">7-digit Id:</label>
                                             <input className="form-control" id="demoStudId" rows="1" name="studentId" value={this.state.studentId} onChange={this.handleInputChange} />
-                                            <label HTMLfor="demographics">First Name:</label>
+                                            <label htmlFor="demographics">First Name:</label>
                                             <input className="form-control" id="demoFirstName" rows="1" name="firstName" value={this.state.firstName} onChange={this.handleInputChange} />
-                                            <label HTMLfor="demographics">Last Name:</label>
+                                            <label htmlFor="demographics">Last Name:</label>
                                             <input className="form-control" id="demoLastName" rows="1" name="lastName" value={this.state.lastName} onChange={this.handleInputChange} />
-                                            <label HTMLfor="demographics">Phone:</label>
+                                            <label htmlFor="demographics">Phone:</label>
                                             <input className="form-control" id="demoPhone" rows="1" name="phone" value={this.state.phone} onChange={this.handleInputChange} />
-                                            <label HTMLfor="demographics">Email:</label>
+                                            <label htmlFor="demographics">Email:</label>
                                             <input className="form-control" id="demoEmail" rows="1" name="email" value={this.state.email} onChange={this.handleInputChange} />
                                         </div>
                                         <hr />
 
                                         <div className="form-group">
                                             <h6>Schedule</h6>
-                                            <label HTMLfor="schedule">Program:</label>
+                                            <label htmlFor="schedule">Program:</label>
                                             <select className="form-control" id="schedProgram" name="program" value={this.state.program} onChange={this.handleInputChange}>
                                                 <option value="None">None</option>
                                                 <option value="ABE">ABE</option>
                                                 <option value="GED">GED</option>
                                                 <option value="ESOL">ESOL</option>
                                             </select>
-                                            <label HTMLfor="schedule">Schedule:</label>
+                                            <label htmlFor="schedule">Schedule:</label>
                                             <select className="form-control" id="schedTime" name="schedule" value={this.state.schedule} onChange={this.handleInputChange}>
                                                 <option value="None">None</option>
                                                 <option value="AM-1">Morning-1</option>
@@ -105,7 +107,7 @@ render() {
                                                 <option value="PM-1">Afternoon-1</option>
                                                 <option value="PM-2">Afternoon-2</option>
                                             </select>
-                                            <label HTMLfor="schedule">Campus:</label>
+                                            <label htmlFor="schedule">Campus:</label>
                                             <select className="form-control" id="schedCampus" name="campus" value={this.state.campus} onChange={this.handleInputChange}>
                                                 <option value="None">None</option>
                                                 <option value="Main">Main</option>
@@ -113,7 +115,7 @@ render() {
                                                 <option value="CHS">CHS</option>
                                                 <option value="KMS">KMS</option>
                                             </select>
-                                            <label HTMLfor="schedule">Status:</label>
+                                            <label htmlFor="schedule">Status:</label>
                                             <select className="form-control" id="schedStatus" name="studentStatus" value={this.state.studentStatus} onChange={this.handleInputChange}>
                                                 <option value="None">None</option>
                                                 <option value="Active">Active</option>
@@ -124,7 +126,7 @@ render() {
 
                                         <div className="form-group">
                                             <h6>Advisement</h6>
-                                            <label HTMLfor="advise">Level of Education:</label>
+                                            <label htmlFor="advise">Level of Education:</label>
                                             <select className="form-control" id="adviseLevel" name="highLevelEd" value={this.state.highLevelEd} onChange={this.handleInputChange}>
                                                 <option value="None">None</option>
                                                 <option value="less than than HS">HS Not Grad</option>
@@ -134,7 +136,7 @@ render() {
                                                 <option value="4-yr">4-yr</option>
                                                 <option value="Masters">Masters</option>
                                             </select>
-                                            <label HTMLfor="advise">Goal:</label>
+                                            <label htmlFor="advise">Goal:</label>
                                             <select className="form-control" id="adviseGoal" name="goal" value={this.state.goal} onChange={this.handleInputChange}>
                                                 <option value="None">None</option>
                                                 <option value="Improve English">Improve Eng</option>
@@ -144,7 +146,7 @@ render() {
                                                 <option value="Employment">Employment</option>
                                                 <option value="Job Promotion">Job Promotion</option>
                                             </select>
-                                            <label HTMLfor="advise">Result:</label>
+                                            <label htmlFor="advise">Result:</label>
                                             <select className="form-control" id="adviseResult" name="result" value={this.state.result} onChange={this.handleInputChange}>
                                                 <option value="None">None</option>
                                                 <option value="Level Increase">Improved Eng Level</option>
@@ -154,7 +156,7 @@ render() {
                                                 <option value="Obtained Employment">Got Employment</option>
                                                 <option value="Obtained Job Promotion">Got Job Promotion</option>
                                             </select>
-                                            <label HTMLfor="advise">Advisor:</label>
+                                            <label htmlFor="advise">Advisor:</label>
                                             <select className="form-control" id="adviseAdvisor" name="advisor" value={this.state.advisor} onChange={this.handleInputChange}>
                                                 <option value="None">None</option>
                                                 <option value="Karen">Karen</option>

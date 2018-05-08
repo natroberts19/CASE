@@ -13,7 +13,7 @@ import SearchForm from "./SearchForm";
 import Sidenav from "../Sidenav";
 import Navbar from "../Navbar";
 import Footer from '../Footer';
-import axios from 'axios';
+// import axios from 'axios';
 
 class Student extends Component {
     // Set the initial value of the tabs and values of all the form fields.
@@ -35,24 +35,6 @@ class Student extends Component {
     }
     };
 
-    // Handle the search form submit. Get student values. * Need Error handling *
-    handleSearchSubmit = (event, searchValues) => {
-        console.log(searchValues.studentId);
-        event.preventDefault();
-        
-        axios.get(`/api/students/search/${searchValues.studentId}`)
-            .then((results)=>{ 
-                console.log("Student get search form results: ", results);
-                this.setState({
-                    student: results.data
-                });
-                
-            }).catch((err)=>{
-                console.log(err);
-            });
-    }
-
-
 render() {
     return(
         <div className="container" style={{"marginLeft":"165px"}}>
@@ -73,9 +55,6 @@ render() {
                     
                 </div>
             <p />
-            {/* <SearchForm /> */}
-            {/* <StudentResults /> */}
-
             <Sidenav />
           <Footer />
         </div>

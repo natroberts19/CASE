@@ -1,14 +1,14 @@
-// -----------------------------------------------------------------------------------------------------------
-// StudentResults is the component to hold the results Table from the StudentForm and SearchForm.
-// This component imports into the Student page.
-// -----------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------------------------
+// StudentResults is the component to hold the results Table from values entered into the StudentForm and SearchForm.
+// This component imports into the StudentForm and SearchForm components.
+// ------------------------------------------------------------------------------------------------------------------
 
 import React, { Component } from 'react';
 import "./style.css";
 import Table from "../Table";
 import axios from "axios";
 // import Notes from "../Notes"
-import NotesAPI from "../../../utils/NotesAPI"
+// import NotesAPI from "../../../utils/NotesAPI"
 
 class StudentResults extends Component {
 
@@ -17,21 +17,17 @@ state = {
     notes: []
 };
 
-// componentDidMount() {
-//     this.loadNotesByStudent();
-// }
-
 // This should load all notes for this student.
-    loadNotesByStudent = () => {
-        console.log("StudentResults load notes for student.");
-        NotesAPI.getNotesByStudent()
-        .then(res =>
+    // loadNotesByStudent = () => {
+    //     console.log("StudentResults load notes for student.");
+    //     NotesAPI.getNotesByStudent()
+    //     .then(res =>
             
-            this.setState({ notes: res.data })          
+    //         this.setState({ notes: res.data })          
             
-        )
-        .catch(err => console.log(err));
-    }
+    //     )
+    //     .catch(err => console.log(err));
+    // }
 
 // Handle changes to the note input field.
     handleInputChange = event => {
@@ -49,22 +45,28 @@ handleNoteSubmit = (event, studentId, note) => {
     const newNote = {
         note
     }
-    axios.post(`/api/notes/${studentId}`, newNote)
+    axios.post(`/api/notes/${studentId}`, newNote, note)
         .then((results)=>{ 
             console.log("StudentResults post newNote results:", newNote);
             console.log("StudentResults notes array:", results.data.notes);
             this.setState({
                 notes: results.data.notes
             });
+            const newState = this.state
+            newState.notes.push(note);   
+            
+            newState.note = "";
+            
+            this.setState({
+                note: "",
+                newState
+             });
             
         }).catch((err)=>{
             console.log(err);
-        });    
-
-        this.setState({
-            note: ""
-        });
+        });          
     }
+
 
     render() {
         const {studentId, firstName, lastName, phone, email, program, schedule, campus, studentStatus, highLevelEd, goal, result, advisor, note} = this.props.student;
@@ -89,7 +91,7 @@ handleNoteSubmit = (event, studentId, note) => {
         ];
 
         // const notes = [
-        //     {data: note}
+        //     {rowheading: "Notes:", data: []}
         // ];
 
         return(
@@ -109,7 +111,7 @@ handleNoteSubmit = (event, studentId, note) => {
                             <form onSubmit={(event) => this.handleNoteSubmit(event, this.props.student._id, this.state.note)}>
                                 <fieldset>
                                     <div className="form-group">
-                                        <input className="form-control" rows="3" name="note" value={this.state.note} onChange={this.handleInputChange} />
+                                        <input className="form-control" rows="10" name="note" value={this.state.note} onChange={this.handleInputChange} />
                                     </div>
                                     <button type="submit" className="btn btn-primary">Submit</button>
                                 </fieldset>
@@ -121,8 +123,8 @@ handleNoteSubmit = (event, studentId, note) => {
                         
                             {this.state.notes.length ? (
                                 <div>
-                                    {this.state.notes.map(note => (
-                                        <li key={note}> {note}</li>
+                                    {this.state.notes.map(rendernote => (
+                                        <li key={rendernote}> {rendernote}</li>
                                     ))}
                                 </div>
                             ) : (

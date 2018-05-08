@@ -6,7 +6,8 @@ import axios from "axios";
 class SearchForm extends Component {
     state = {
         search: "",
-        // message: "Student Id does not exist, try again!"
+        // note: "",
+        
     };
 
     // Handle changes to the input fields:
@@ -20,7 +21,6 @@ class SearchForm extends Component {
     // Handle the search form submit. Get student values. * Need Error handling *
     handleSearchSubmit = (event, searchValues) => {
         console.log("SearchForm handleSearchSubmit studentId: ", searchValues.studentId);
-        console.log("SearchForm handleSearchSubmit note: ", searchValues.notes);
         event.preventDefault();
 
         axios.get(`/api/students/search/${searchValues.studentId}`)
@@ -37,7 +37,7 @@ class SearchForm extends Component {
             });
 
             this.setState({
-                studentId: ""
+                studentId: "",
             });
     }
 
@@ -51,9 +51,9 @@ class SearchForm extends Component {
                         <form onSubmit={(event) => this.handleSearchSubmit(event, this.state)}>
                             <fieldset>
                                 <div className="form-group">
-                                    <legend><i class="fa fa-search"></i> Search</legend>
+                                    <legend><i className="fa fa-search"></i> Search</legend>
                                     <hr />
-                                    <label HTMLfor="search">Enter 7-digit id:</label>
+                                    <label htmlFor="search">Enter 7-digit id:</label>
                                     <input className="form-control" id="searchStudId" rows="1" name="studentId" value={this.state.studentId} onChange={this.handleInputChange} />
                                 </div>
                                 <button type="submit" className="btn btn-primary" id="existingStudent">Search</button>
@@ -66,7 +66,7 @@ class SearchForm extends Component {
 
                 <div className="row panel-row">
                     <div className="container" id="studentForm">
-                        <legend><i class="fa fa-edit"></i> Results</legend>
+                        <legend><i className="fa fa-edit"></i> Results</legend>
                         <hr />
 
                         {
