@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import "./style.css";
 import Table from "../Table";
 import axios from "axios";
-// import Notes from "../Notes"
+import Notes from "../Notes"
 // import NotesAPI from "../../../utils/NotesAPI"
 
 class StudentResults extends Component {
@@ -16,18 +16,6 @@ state = {
     note: "",
     notes: []
 };
-
-// This should load all notes for this student.
-    // loadNotesByStudent = () => {
-    //     console.log("StudentResults load notes for student.");
-    //     NotesAPI.getNotesByStudent()
-    //     .then(res =>
-            
-    //         this.setState({ notes: res.data })          
-            
-    //     )
-    //     .catch(err => console.log(err));
-    // }
 
 // Handle changes to the note input field.
     handleInputChange = event => {
@@ -38,34 +26,35 @@ state = {
     };
 
 // Handles the note submit.
-handleNoteSubmit = (event, studentId, note) => {
-    event.preventDefault();
-    console.log("StudentResults note form value:", note);
-    console.log("StudentResults note student value:", studentId);
-    const newNote = {
-        note
-    }
-    axios.post(`/api/notes/${studentId}`, newNote, note)
-        .then((results)=>{ 
-            console.log("StudentResults post newNote results:", newNote);
-            console.log("StudentResults notes array:", results.data.notes);
-            this.setState({
-                notes: results.data.notes
-            });
-            const newState = this.state
-            newState.notes.push(note);   
-            
-            newState.note = "";
-            
-            this.setState({
-                note: "",
-                newState
-             });
-            
-        }).catch((err)=>{
-            console.log(err);
-        });          
-    }
+    handleNoteSubmit = (event, studentId, note) => {
+        event.preventDefault();
+        console.log("StudentResults note form value:", note);
+        console.log("StudentResults note student value:", studentId);
+        const newNote = {
+            note
+        }
+        axios.post(`/api/notes/${studentId}`, newNote, note)
+            .then((results)=>{ 
+                console.log("StudentResults post newNote results:", newNote);
+                console.log("StudentResults notes array:", results.data.notes);
+                // this.setState({
+                //     notes: results.data.notes
+                // });
+
+                const newState = this.state
+                newState.notes.push(note);   
+                
+                newState.note = "";
+                
+                this.setState({
+                    note: "",
+                    newState
+                });
+                
+            }).catch((err)=>{
+                console.log(err);
+            });          
+        }
 
 
     render() {
@@ -90,9 +79,6 @@ handleNoteSubmit = (event, studentId, note) => {
             {rowheading: "Advisor:", data: advisor}
         ];
 
-        // const notes = [
-        //     {rowheading: "Notes:", data: []}
-        // ];
 
         return(
             <div className="container" id="studentResults">
@@ -104,7 +90,7 @@ handleNoteSubmit = (event, studentId, note) => {
                         <p />
                         <Table header="Advisement" tableData={advise}/>
                         <p />
-                        {/* <Table header="Notes" tableData={note} /> */}
+                        {/* <Notes /> */}
                         
                         <div className="container" id="noteForm"> 
                             <h6> Add a note for this student:</h6>
@@ -121,15 +107,16 @@ handleNoteSubmit = (event, studentId, note) => {
 
                         <div className="container">
                         
-                            {this.state.notes.length ? (
+                        {this.state.notes.length ? (
                                 <div>
                                     {this.state.notes.map(rendernote => (
                                         <li key={rendernote}> {rendernote}</li>
                                     ))}
                                 </div>
                             ) : (
-                                <div>No notes exist yet!</div>
+                                <div></div>
                             )}
+
 		                </div>
                         
                     </div>

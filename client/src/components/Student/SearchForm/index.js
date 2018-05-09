@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import "./style.css";
 import StudentResults from "../StudentResults";
+import Notes from "../Notes";
 import axios from "axios";
 
 class SearchForm extends Component {
     state = {
         search: "",
-        // note: "",
-        
+        note: "",
+        notes: []        
     };
 
     // Handle changes to the input fields:
@@ -63,26 +64,29 @@ class SearchForm extends Component {
                 </div>
                 <p />
 
-
                 <div className="row panel-row">
                     <div className="container" id="studentForm">
                         <legend><i className="fa fa-edit"></i> Results</legend>
                         <hr />
-
                         {
-                            this.state.student ? <StudentResults 
-                                                    student={this.state.student} 
-                                                    notes={this.state.notes}/> 
-                                                : <h3> {this.state.message} </h3>
+                            this.state.student ? 
+                            <StudentResults 
+                                student={this.state.student} 
+                            /> : 
+                            <h3> {this.state.message} </h3>
+
+                        } 
+                        {
+                            this.state.notes ? 
+                            <Notes 
+                                notes={this.state.notes}
+                            /> : 
+                            <h3> {this.state.message} </h3>
 
                         }
-
-
                     </div>
                 </div>
             </div>
-
-
         )
     }
 }

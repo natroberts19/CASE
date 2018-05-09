@@ -9,17 +9,11 @@ const Notes = ({notes}) => {
 
 	return(
 		<div className="container">
-			{notes.length ? (
-				<div>
-					{notes.map(note => (
-						<li key={note._id}> {note}</li>
-					))}
-				</div>
-			) : (
-				<div>No notes exist yet!</div>
-			)}
+				
+			{notes.map(noterender => (
+				<li key={noterender._id}> {noterender.note}</li>
+			))}	
 		</div>
-	
 		)
 	}		
 
