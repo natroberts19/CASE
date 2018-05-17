@@ -19,15 +19,6 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
 
-// GET route for retrieving one todo from the database. 
-    findOneTodo: function(req, res) {
-        console.log("this is find by id");
-        db.Todo
-        .findOne(req.params.id)
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-    },
-
 // GET query to find all Todo items.
     findAllTodos: function(req, res) {
         console.log("this is find all to dos");

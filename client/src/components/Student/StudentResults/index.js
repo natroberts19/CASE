@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import "./style.css";
 import Table from "../Table";
 import axios from "axios";
-import Notes from "../Notes"
+// import Notes from "../Notes"
 // import NotesAPI from "../../../utils/NotesAPI"
 
 class StudentResults extends Component {
@@ -58,7 +58,7 @@ state = {
 
 
     render() {
-        const {studentId, firstName, lastName, phone, email, program, schedule, campus, studentStatus, highLevelEd, goal, result, advisor, note} = this.props.student;
+        const {studentId, firstName, lastName, phone, email, program, schedule, campus, studentStatus, highLevelEd, goal, result, advisor} = this.props.student;
         const student = [
             {rowheading: "Student Id:", data: studentId},
             {rowheading: "First Name:", data: firstName},
@@ -106,6 +106,7 @@ state = {
                         <p />
 
                         <div className="container">
+                        <h6> Notes: </h6>
                         
                         {this.state.notes.length ? (
                                 <div>
