@@ -1,6 +1,6 @@
 // ------------------------------------------------------------------------------------------------------------------
-// StudentResults is the component to hold the results Table from values entered into the StudentForm and SearchForm.
-// This component imports into the StudentForm and SearchForm components.
+// StudentResults is the component to hold the results Table from values entered into the StudentForm and SearchForm. It also contains the Note input form and render code.
+// This component imports into both the StudentForm and SearchForm components.
 // ------------------------------------------------------------------------------------------------------------------
 
 import React, { Component } from 'react';
@@ -28,15 +28,15 @@ state = {
 // Handles the note submit.
     handleNoteSubmit = (event, studentId, note) => {
         event.preventDefault();
-        console.log("StudentResults note form value:", note);
-        console.log("StudentResults note student value:", studentId);
+        console.log("StudentResults, handleNoteSubmit, note form value:", note);
+        console.log("StudentResults, handleNoteSubmit, note studentId:", studentId);
         const newNote = {
             note
         }
         axios.post(`/api/notes/${studentId}`, newNote, note)
             .then((results)=>{ 
-                console.log("StudentResults post newNote results:", newNote);
-                console.log("StudentResults notes array:", results.data.notes);
+                console.log("StudentResults, axios post newNote results:", newNote);
+                console.log("StudentResults, axios post, notes(note) array:", results.data.notes);
                 // this.setState({
                 //     notes: results.data.notes
                 // });
@@ -82,32 +82,30 @@ state = {
 
         return(
             <div className="container" id="studentResults">
-                    <div className="panel-body">
+                <div className="panel-body">
 
-                        <Table header="Student" tableData={student} /> 
-                        <p />
-                        <Table header="Schedule" tableData={schedules} />
-                        <p />
-                        <Table header="Advisement" tableData={advise}/>
-                        <p />
-                        {/* <Notes /> */}
-                        
-                        <div className="container" id="noteForm"> 
-                            <h6> Add a note for this student:</h6>
-                            <form onSubmit={(event) => this.handleNoteSubmit(event, this.props.student._id, this.state.note)}>
-                                <fieldset>
-                                    <div className="form-group">
-                                        <input className="form-control" rows="10" name="note" value={this.state.note} onChange={this.handleInputChange} />
-                                    </div>
-                                    <button type="submit" className="btn btn-primary">Submit</button>
-                                </fieldset>
-                            </form>
-                        </div>  
-                        <p />
+                    <Table header="Student" tableData={student} /> 
+                    <p />
+                    <Table header="Schedule" tableData={schedules} />
+                    <p />
+                    <Table header="Advisement" tableData={advise}/>
+                    <p />
+                    
+                    <div className="container" id="noteForm"> 
+                        <h6> Add a note for this student:</h6>
+                        <form onSubmit={(event) => this.handleNoteSubmit(event, this.props.student._id, this.state.note)}>
+                            <fieldset>
+                                <div className="form-group">
+                                    <input className="form-control" rows="10" name="note" value={this.state.note} onChange={this.handleInputChange} />
+                                </div>
+                                <button type="submit" className="btn btn-primary">Submit</button>
+                            </fieldset>
+                        </form>
+                    </div>  
+                    <p />
 
-                        <div className="container">
-                        <h6> Notes: </h6>
-                        
+                    <div className="container">
+                    <h6> Notes: </h6>
                         {this.state.notes.length ? (
                                 <div>
                                     {this.state.notes.map(rendernote => (
@@ -116,11 +114,10 @@ state = {
                                 </div>
                             ) : (
                                 <div></div>
-                            )}
-
-		                </div>
-                        
+                            )
+                        }
                     </div>
+                </div>
             </div>
         );
     }       

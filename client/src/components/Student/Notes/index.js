@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------------
-//The Notes component gets and displays all existing notes for a selected student.
+//The Notes component maps over and renders all existing notes for a selected student.
 //---------------------------------------------------------------------------------
 
 import React from 'react';
@@ -9,13 +9,13 @@ const Notes = ({notes}) => {
 
 	return(
 		<div className="container">
-			
 			{notes.map(noterender => (
-				<li key={noterender._id}> {noterender.note} ({noterender.date}) </li>	
+				<li key={noterender._id}> 
+				<strong> {noterender.note} </strong> ({noterender.date}) 
+				</li>	
 			))}	
-			
 		</div>
-		)
-	}		
+	)
+}		
 
 export default Notes;

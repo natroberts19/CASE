@@ -11,7 +11,7 @@ class SearchForm extends Component {
         notes: []        
     };
 
-    // Handle changes to the input fields:
+// Handle changes to the form input fields:
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
@@ -19,15 +19,15 @@ class SearchForm extends Component {
         });
     };
 
-    // Handle the search form submit. Get student values. * Need Error handling *
+// Handle the search form submit. Get existing student values. * Need Error handling *
     handleSearchSubmit = (event, searchValues) => {
-        console.log("SearchForm handleSearchSubmit studentId: ", searchValues.studentId);
+        console.log("SearchForm, handleSearchSubmit, searchValues.studentId: ", searchValues.studentId);
         event.preventDefault();
 
         axios.get(`/api/students/search/${searchValues.studentId}`)
             .then((results) => {
-                console.log("SearchForm get search results: ", results);
-                console.log("SearchForm get note results: ", results.data.notes);
+                console.log("SearchForm, axios get search, results: ", results);
+                console.log("SearchForm, axios get note, results.data.notes: ", results.data.notes);
                 this.setState({
                     student: results.data,
                     notes: results.data.notes
@@ -44,10 +44,9 @@ class SearchForm extends Component {
 
     render() {
         return (
-
             <div className="container">
-
                 <div className="row panel-row">
+                {/* Student id search form input section. */}
                     <div className="container" id="searchForm">
                         <form onSubmit={(event) => this.handleSearchSubmit(event, this.state)}>
                             <fieldset>
@@ -63,7 +62,8 @@ class SearchForm extends Component {
                     </div>
                 </div>
                 <p />
-
+                
+                {/* Student search results render section. */}
                 <div className="row panel-row">
                     <div className="container" id="studentForm">
                         <legend><i className="fa fa-edit"></i> Results</legend>
@@ -74,7 +74,6 @@ class SearchForm extends Component {
                                 student={this.state.student} 
                             /> : 
                             <h3> {this.state.message} </h3>
-
                         } 
                         {
                             this.state.notes ? 
@@ -82,7 +81,6 @@ class SearchForm extends Component {
                                 notes={this.state.notes}
                             /> : 
                             <h3> {this.state.message} </h3>
-
                         }
                     </div>
                 </div>

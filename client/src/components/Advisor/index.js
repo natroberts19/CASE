@@ -13,7 +13,6 @@ import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
 
 class Advisor extends Component {
-
 	state = {
 		countmyall: [],
 		countmsgoresult: [],
@@ -26,25 +25,25 @@ class Advisor extends Component {
 	}
 
 	loadCountMyAll = () => {
-		console.log("load my total of all students");
+		console.log("Advisor, API get count of all my students.");
 		AdvisorsAPI.getCountMyAll()
-			.then(res =>
-				this.setState({ countmyall: res.data })
-			)
-			.catch(err => console.log(err));
+		.then(res =>
+			this.setState({ countmyall: res.data })
+		)
+		.catch(err => console.log(err));
 	}
 
 	loadCountMSGOResult = () => {
-		console.log("load my total of students with a result");
+		console.log("Advisor, API get total of students with a MSGO result.");
 		AdvisorsAPI.getCountMSGOResult()
-			.then(res =>
-				this.setState({ countmsgoresult: res.data })
-			)
-			.catch(err => console.log(err));
+		.then(res =>
+			this.setState({ countmsgoresult: res.data })
+		)
+		.catch(err => console.log(err));
 	}
 
 	render() {
-
+		// The following calculates the MSGO success percentage based on students advancing and pre-set goal.
 		let percent;
 		let goal = parseInt(40, 10);
 		let progress;
@@ -54,15 +53,12 @@ class Advisor extends Component {
 
 			percent = ((result / all) * 100).toFixed(2);
 			progress = ((percent / goal) * 100);
-			console.log("progress: ", progress);
+			console.log("Progress calculation: ", progress);
 		} else {
 			percent = "0"
 		}
 		percent = percent + "%";
-		
-
 		return (
-
 			<div className="container" style={{ "marginLeft": "165px" }}>
 				<Navbar
 					username={this.props.auth.username}
@@ -76,27 +72,19 @@ class Advisor extends Component {
 					<div className="card-body">
 						<h5 className="card-title">Understanding MSGO</h5>
 						<hr />
-						<p className="card-text">Part of an advisor's annual evaluation is based on a criterion known as Measurable Student Growth Outcome (MSGO). A successful MSGO is based on whether adult students that we advise advance in their education or career goals. A target percentage is established at the beginning of the evaluation period.
-						<br />
-						<br />
-						There are three categories of successful advancement or "exit" that qualify:
-							<ul>
-								<li>Test score attainment (GED or English level).</li>
-								<li>New job or promotion in current job.</li>
-								<li>Enrollment in post-secondary institution (college or voc-tech) or training program (ex. Career Source or Community Vision).</li>
-							</ul>
+						<p className="card-text">Part of an advisor's annual evaluation is based on a criterion known as Measurable Student Growth Outcome (MSGO). A successful MSGO is based on whether adult students that are advised advance in their education or career goals. A target percentage is established at the beginning of the evaluation period.
 						</p>
 						<h5>How is MSGO Calculated?</h5>
 						<hr />
 						<div style={{ "fontWeight": "bold", "color": "blue" }}> MSGO = Total of students who advance / Total of students assisted </div>
-						<p>The total of students who advance is based on attaining one of the three exit categories listed above. This data is tracked in CASE using the Result field. You will only track a result when the student advances based on their goal. The total of students assisted is based on the total number of active and inactive students advised during the review period.</p>
+						<p>The total of students who advance is based on attaining one of the three exit categories: (1.) Test score attainment (GED or English level), (2.) New job or promotion in current job, or (3.) Enrollment in post-secondary institution or training program. This data is tracked in CASE using the Result field. Advisors will track a result when the student advances based on their goal. The total of students assisted is based on the total number of active and inactive students advised during the review period.</p>
 						<p>Following is your current MSGO status:</p>
 						<div className="card border-primary mb-3" id="advisor-card">
 							Total Students Advancing = {this.state.countmsgoresult} <br />
 							Total Students Assisted = {this.state.countmyall}
 							<hr />
 							MSGO Goal = 40% <br />
-							MSGO Percentage = {percent}
+							MSGO Actual = {percent}
 							<Progress 
 								status= "success"
 								percent={progress}
