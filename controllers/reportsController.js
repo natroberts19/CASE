@@ -8,7 +8,7 @@ module.exports = {
 
 // GET query for retrieving all students from the CASE database.
     findAllReport: function(req, res) {
-        console.log("This is the reportsController findAll report.");
+        console.log("This is the reportsController findAllReport.");
         db.Student
         .find(req.query)
         .sort({ lastName: 1 })

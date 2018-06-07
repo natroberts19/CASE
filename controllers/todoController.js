@@ -8,8 +8,7 @@ module.exports = {
 
 // POST route for creating a new todo item in the database. 
     createTodo: function(req, res) {
-        console.log("this is createTodo:", req.body);
-        
+        console.log("this is todoController createTodo:", req.body);
         db.Todo
         .create(req.body)
         .then(dbModel => {
@@ -21,7 +20,7 @@ module.exports = {
 
 // GET query to find all Todo items.
     findAllTodos: function(req, res) {
-        console.log("this is find all to dos");
+        console.log("This is the todoController findAllTodos.", req.query);
         db.Todo
         .find(req.query)
         .sort({ dueDate: 1 })

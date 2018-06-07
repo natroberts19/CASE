@@ -11,7 +11,6 @@ module.exports = {
     postNote: function(req, res) {
         console.log("postNote body notes controller: ", req.body);
         console.log("postNote student req notes controller: ", req.params.id);
-
         db.Note
         .create(req.body)
         .then(dbNote => {
@@ -22,15 +21,4 @@ module.exports = {
         })
         
     }
-
-// GET route to see all the notes for one student.
-    // getNotes: function(req, res) {
-    //     console.log("This is getNotes for one student.")
-
-    //     db.Student
-    //     .findOne({})
-    //     .populate("notes")
-    //     .then(dbStudent => res.json(dbStudent))
-    //     .catch(err => res.status(422).json(err));
-    // }
 }

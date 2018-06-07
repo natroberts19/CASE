@@ -7,7 +7,7 @@ import "./style.css";
 import Navbar from "../Navbar";
 import Sidenav from "../Sidenav";
 import Footer from '../Footer';
-// import axios from 'axios';
+import axios from 'axios';
 import TasksAPI from '../../utils/TasksAPI'
 // import TaskRender from './TaskRender';
 
@@ -15,20 +15,20 @@ class Tasks extends Component {
 
 	// Set the initial values of the Task input form.
 	state = {
-		tasks: [],
 		dueDate: "",
 		title: "",
-		description: ""
+		description: "",
+		tasks: [],
 	}
 
 	componentDidMount() {
-		this.loadTasks();
+		this.loadAllTasks();
 	  }
 	
-	loadTasks = () => {
+	loadAllTasks = () => {
 		console.log("Load All Tasks.");
-	TasksAPI.getTasks()
-		.then(res => this.setState({ tasks : res.data, dueDate : "", title : "", description : "" }))
+	TasksAPI.getAllTasks()
+		.then(res => this.setState({ tasks : [] }))
 		.catch(err => console.log(err));
 	};
 
@@ -41,18 +41,36 @@ class Tasks extends Component {
 	}
 
 	// Handle the new task form submit. Post form values.
-	handleTaskSubmit = event => {
+	handleTaskSubmit = (event, formValues) => {
+		console.log("New task handleTaskSubmit formValues: ", formValues);
 		event.preventDefault();
-		if (this.state.title && this.state.description) {
-		  TasksAPI.postTask({
-			dueDate: this.state.dueDate,
-			title: this.state.title,
-			description: this.state.description
-		  })
-			.then(res => this.loadTasks())
-			.catch(err => console.log(err));
-		}
-	  };
+
+		axios.post("/api/todo", formValues)
+					.then((results)=>{ 
+							console.log("Post new task results: ", results.data);
+
+							const newState = this.state
+                newState.tasks.push(formValues);   
+                
+								console.log("Tasks array: ", formValues);
+
+							this.setState({
+									dueDate: results.data.dueDate,
+									title: results.data.title,
+									description: results.data.description,
+									newState
+							});
+							
+					}).catch((err)=>{
+							console.log(err);
+					});  
+
+					this.setState({
+						dueDate: "",
+						title: "",
+						description: ""
+				});
+		};
 
 render() {
 	return (
@@ -64,11 +82,9 @@ render() {
 			<h2><i className="fa fa-check-square"></i> Tasks</h2><p />
 				<div className="card">
 					<div className="card-header">
-						Featured
+						Task Builder
 					</div>
 					<div className="card-body">
-						<h5 className="card-title">Task Builder: </h5>
-						<p className="card-text">Add your tasks here...</p>
 							<div className="row">
 								<div className="col">
 									<div className="row panel-row">
@@ -97,24 +113,24 @@ render() {
 									<div className="row panel-row">
 										<div className="col">
 											<div className="container" id="taskResults"> 
-											<legend><i className="fa fa-calendar-check-o"></i> Your Open Tasks</legend>
+											<legend><i className="fa fa-calendar-check-o"></i> Open Tasks</legend>
 											<hr />
 																						
-												{/* {this.state.tasks.length ? (
-													<ul>
-														{this.state.tasks.map(task => {
+												{this.state.tasks.length ? (
+													<div>
+														{this.state.tasks.map(rendertask => (
 														
-															<li key={task._id}>
-															<strong>
-															{task.dueDate} : {task.title} : {task.description}
-															</strong>
+															<li key={rendertask._id}>
+												
+															{rendertask.dueDate} : {rendertask.title} : {rendertask.description}
+															
 															</li>
 														
-														})}
-													</ul> 
+														))}
+													</div> 
 													) : (
-													<ul><li><h3>No Results to Display</h3></li></ul>
-													)} */}
+													<li><h5>No Results to Display</h5></li>
+													)}
 													
 									
 											</div>
@@ -126,7 +142,7 @@ render() {
 					</div>
 			
 			<Sidenav />
-          <Footer />	
+      <Footer />	
 		</div>
 	);
 }

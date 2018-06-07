@@ -8,8 +8,6 @@ import StudentTabs from "./StudentTabs";
 import StudentForm from "./StudentForm";
 import SearchForm from "./SearchForm";
 // import StudentResults from './StudentResults';
-// import SearchForm2 from "./SearchForm2";
-// import SearchResults from "./SearchResults";
 import Sidenav from "../Sidenav";
 import Navbar from "../Navbar";
 import Footer from '../Footer';

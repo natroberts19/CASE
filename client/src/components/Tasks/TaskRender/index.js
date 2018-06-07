@@ -4,28 +4,29 @@
 
 import React from 'react';
 
-const TaskRender = (props) => {
+const TaskRender = ({tasks}) => {
 	return(
-		<div className="container">
-
-		{this.state.tasks.length ? (
-            <div>
-                {this.state.tasks.map(task => {
-                  return (
-                    <li key={task._id}>
-                        <strong>
-                          {task.dueDate} : {task.title} : {task.description}
-                        </strong>
-                    </li>
-                  );
-                })}
-            </div> 
-            ) : (
-              <h3>No Results to Display</h3>
-			)}
-			
-		</div>
-	);
+		<div className="col">
+			<div className="container" id="taskResults"> 
+				<legend><i className="fa fa-calendar-check-o"></i> Your Open Tasks</legend>
+				<hr />
+					<div>
+						{tasks.map(task => (
+								<tbody>
+									<tr key={task._id}>
+										<td>{task.dueDate}</td>
+										<td>{task.title}</td>
+										<td>{task.description}</td>
+									</tr>
+								</tbody>
+							
+						))}
+						</div> 
+					</div>
+				</div>
+						
+		
+	)
 }
 
 export default TaskRender;

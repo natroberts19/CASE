@@ -6,13 +6,14 @@ import axios from "axios";
 
 export default {
     
-    // GET all tasks.
-    getTasks: function() {
+    // GET all tasks loaded in the database.
+    getAllTasks: function() {
         return axios.get("api/todo/all", )
     },
+    
     // POSTS a task to the database.
-    postTask: function(taskData) {
-        return axios.post("/api/todo", taskData);
-  }
+//     postTask: function(taskData) {
+//         return axios.post("/api/todo", taskData);
+//   }
     
 };

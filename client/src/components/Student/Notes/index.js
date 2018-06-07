@@ -11,8 +11,9 @@ const Notes = ({notes}) => {
 		<div className="container">
 			
 			{notes.map(noterender => (
-				<li key={noterender._id}> {noterender.note} ({noterender.date}) </li>
+				<li key={noterender._id}> {noterender.note} ({noterender.date}) </li>	
 			))}	
+			
 		</div>
 		)
 	}		

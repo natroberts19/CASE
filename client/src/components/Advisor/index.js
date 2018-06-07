@@ -76,9 +76,11 @@ class Advisor extends Component {
 					<div className="card-body">
 						<h5 className="card-title">Understanding MSGO</h5>
 						<hr />
-						<p className="card-text">Part of an advisor's annual evaluation is based on a criterion known as Measurable Student Growth Outcome (MSGO). A successful MSGO is based on whether adult students that we advise advance in their education or career goals. A target percentage is established at the beginning of the evaluation period.</p>
-						<p>There are three categories of successful advancement or "exit" that qualify:
-						<ul>
+						<p className="card-text">Part of an advisor's annual evaluation is based on a criterion known as Measurable Student Growth Outcome (MSGO). A successful MSGO is based on whether adult students that we advise advance in their education or career goals. A target percentage is established at the beginning of the evaluation period.
+						<br />
+						<br />
+						There are three categories of successful advancement or "exit" that qualify:
+							<ul>
 								<li>Test score attainment (GED or English level).</li>
 								<li>New job or promotion in current job.</li>
 								<li>Enrollment in post-secondary institution (college or voc-tech) or training program (ex. Career Source or Community Vision).</li>
@@ -93,6 +95,7 @@ class Advisor extends Component {
 							Total Students Advancing = {this.state.countmsgoresult} <br />
 							Total Students Assisted = {this.state.countmyall}
 							<hr />
+							MSGO Goal = 40% <br />
 							MSGO Percentage = {percent}
 							<Progress 
 								status= "success"

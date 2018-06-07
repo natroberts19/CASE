@@ -12,7 +12,7 @@ module.exports = function (passport) {
 	router.route("/")
 	.post(todoController.createTodo);
 
-	// Matches with "/api/todo/all"
+// Matches with "/api/todo/all"
 	router.route("/all")
 	.get(todoController.findAllTodos)
 
