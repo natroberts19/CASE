@@ -86,7 +86,7 @@ module.exports = {
         db.Student
         .find({
             advisor: "Natalie",
-            result: { $in: ['Improved Eng Level', 'Got GED', 'Enrolled Tech', 'Enrolled College', 'Got Employment', 'Got Job Promotion'] }
+            result: { $in: ['Improved Eng Level', 'Got GED', 'Enrolled Tech or Voc', 'Enrolled College', 'Got Employment', 'Got Job Promotion'] }
         })
         .count({}, function (err, count) {
             console.log("MSGO Result Count", count);
