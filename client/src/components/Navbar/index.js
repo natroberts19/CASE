@@ -7,7 +7,7 @@ const Navbar = (props) => {
 		<nav className="navbar navbar-expand-lg">
         <ul className="navbar-nav mr-auto">
             <li className="nav-item" style={{"fontSize" : "16px"}}>
-                You are logged in as {props.username}. <br />
+                You are logged in as <strong style={{"color" : "blue"}}> {props.username}</strong> <br />
             </li>
         </ul>
         <span className="form-inline my-2 my-lg-0">
