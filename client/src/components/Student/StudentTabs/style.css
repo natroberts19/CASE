@@ -1,10 +1,19 @@
+  /* Tab Color */
+.nav-tabs>li>a {
+  background-color: whitesmoke; 
+  color:#4582EC;
+}
 
-  .nav-tabs > li > a {
-    border: medium none;
-  }
-  .nav-tabs > li > a:hover {
-    background-color: whitesmoke !important;
-      border: medium none;
-      border-radius: 0;
-      color:#fff;
-  }
+/* Active Tab Color */
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+  color: #4582EC;
+  font-weight: bold;
+  background-color: lightgray;
+  border: 3px solid #888888;
+}
+
+/* Hover Tab Color */
+.nav-tabs>li>a:hover {
+  border-color: #000000;
+  background-color: #111111;
+}

@@ -124,18 +124,19 @@ render() {
 									<div>
 										{this.state.tasks.map(rendertask => (
 											<li key={rendertask._id}>
-											<strong>{rendertask.title} :</strong> {rendertask.description} (Due: {rendertask.dueDate})	
+											<button className="btn btn-primary btn-sm" aria-label="Close" onclick="">X</button> <strong>{rendertask.title}:</strong> {rendertask.description} (Due: {rendertask.dueDate})	
+											<hr />
 											</li>
 										))}
-									<li><strong>Ann Smith: </strong> Resume updates. (Due: 6/15/18)</li>
-									<li><strong>Jose Garcia: </strong> Career Source training info. (Due: 6/25/18)</li>
-									<li><strong>Milinzy Hu: </strong> Resume updates. (Due: 6/21/18)</li>
+									<li><button className="btn btn-primary btn-sm" aria-label="Close" onclick="">X</button> <strong>Ann Smith: </strong> Resume updates. (Due: 6/15/18)<hr /></li>
+									<li><button className="btn btn-primary btn-sm" aria-label="Close" onclick="">X</button> <strong>Jose Garcia: </strong> Career Source training info. (Due: 6/25/18)<hr /></li>
+									<li><button className="btn btn-primary btn-sm" aria-label="Close" onclick="">X</button> <strong>Milinzy Hu: </strong> Resume updates. (Due: 6/21/18)<hr /></li>
 									</div> 
 									) : (
 									<div>
-									<li><strong>Ann Smith: </strong> Resume updates. (Due: 6/15/18)</li>
-									<li><strong>Jose Garcia: </strong> Career Source training info. (Due: 6/25/18)</li>
-									<li><strong>Milinzy Hu: </strong> Resume updates. (Due: 6/21/18)</li>
+									<li><button className="btn btn-primary btn-sm" aria-label="Close" onclick="">X</button> <strong>Ann Smith: </strong> Resume updates. (Due: 6/15/18)<hr /></li>
+									<li><button className="btn btn-primary btn-sm" aria-label="Close" onclick="">X</button> <strong>Jose Garcia: </strong> Career Source training info. (Due: 6/25/18)<hr /></li>
+									<li><button className="btn btn-primary btn-sm" aria-label="Close" onclick="">X</button> <strong>Milinzy Hu: </strong> Resume updates. (Due: 6/21/18)<hr /></li>
 									</div>
 								)}
 						</div>

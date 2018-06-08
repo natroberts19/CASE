@@ -12,6 +12,7 @@ const Notes = ({notes}) => {
 			{notes.map(noterender => (
 				<li key={noterender._id}> 
 				<strong> {noterender.note} </strong> ({noterender.date}) 
+				<hr />
 				</li>	
 			))}	
 		</div>

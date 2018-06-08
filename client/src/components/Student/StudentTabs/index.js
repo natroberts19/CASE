@@ -13,12 +13,14 @@ const StudentTabs = (props) => {
 			<li 
 				onClick={() => props.handlePageChange("SearchForm")}
 				className={props.currentPage === "SearchForm" ? "active" : ""}
+				// style={{"backgroundColor" : "lightgray"}}
 			>
-				<a className="nav-link">Search Students</a>
+				<a className="nav-link" id="active">Search Students</a>
 			</li>
 			<li 
 				onClick={() => props.handlePageChange("StudentForm")}
 				className={props.currentPage === "StudentForm" ? "active" : ""}
+				// style={{"backgroundColor" : "lightgray"}}
 			>
 				<a className="nav-link">Add New Students</a>
 			</li>
