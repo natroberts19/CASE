@@ -1,3 +1,8 @@
+// ---------------------------------------------------------------------------------------------------------
+// The SearchFrom component allows the user to search for a student by 7-digit student id.
+// This componenet also includes the Notes component that allows the user to add a note to a student record.
+// ---------------------------------------------------------------------------------------------------------
+
 import React, { Component } from 'react';
 import "./style.css";
 import StudentResults from "../StudentResults";

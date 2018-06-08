@@ -1,7 +1,7 @@
-// ------------------------------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------------------
 // StudentResults is the component to hold the results Table from values entered into the StudentForm and SearchForm. It also contains the Note input form and render code.
 // This component imports into both the StudentForm and SearchForm components.
-// ------------------------------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------------------
 
 import React, { Component } from 'react';
 import "./style.css";

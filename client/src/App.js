@@ -48,7 +48,7 @@ class App extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    //call a sign In function
+  //call a Sign In function
     const newUser = {
       name: this.state.name,
       username: this.state.username,
