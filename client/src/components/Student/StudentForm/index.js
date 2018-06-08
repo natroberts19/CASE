@@ -151,12 +151,12 @@ render() {
                                         <label htmlFor="advise">Result:</label>
                                         <select className="form-control" id="adviseResult" name="result" value={this.state.result} onChange={this.handleInputChange}>
                                             <option value="None">None</option>
-                                            <option value="Level Increase">Improved Eng Level</option>
-                                            <option value="Attained GED">Got GED</option>
-                                            <option value="Enrolled Tech or Voc">Enrolled Tech</option>
+                                            <option value="Improved Eng Level">Improved Eng Level</option>
+                                            <option value="Got GED">Got GED</option>
+                                            <option value="Enrolled Tech">Enrolled Tech</option>
                                             <option value="Enrolled College">Enrolled College</option>
-                                            <option value="Obtained Employment">Got Employment</option>
-                                            <option value="Obtained Job Promotion">Got Job Promotion</option>
+                                            <option value="Got Employment">Got Employment</option>
+                                            <option value="Got Job Promotion">Got Job Promotion</option>
                                         </select>
                                         <label htmlFor="advise">Advisor:</label>
                                         <select className="form-control" id="adviseAdvisor" name="advisor" value={this.state.advisor} onChange={this.handleInputChange}>
