@@ -42,6 +42,11 @@ The CASE application aims to solve these problems by providing a user-friendly p
 * Dashboard real-time, snapshot statistics.
 * Advisor real-time calculation of MSGO status.
 
+## Version 1.1 Release, June 12, 2018
+
+* Tasks section to post to-do items.
+* Progress meter in Advisor section.
+
 ## Future Releases
 
 * Three-tiered access (support staff, advisor, and admin).
@@ -54,4 +59,7 @@ The CASE application aims to solve these problems by providing a user-friendly p
 * Messaging to students.
 
 ## Application Link
-[https://safe-sands-81459.herokuapp.com/]
+https://safe-sands-81459.herokuapp.com/
+
+## Demo Video Link
+https://youtu.be/g8fWZ6eM02o
